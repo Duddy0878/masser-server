@@ -1,0 +1,225 @@
+*{
+    font-family: Indie Flower;
+    color: white;
+    text-align: center;
+}
+
+body{
+    background-color: rgb(41, 173, 190);
+}
+
+h1{
+    padding-top: 30px;
+}
+
+h3{
+    padding: 10px;
+}
+
+a:hover{
+    color: bisque;
+}
+
+.box{
+   border: solid 4px white;
+   width: 53%;
+   margin-left: 50%;
+   transform: translate(-50%);
+   margin-top: 10%;
+}
+
+.amount{
+    display: inline;
+}
+
+.optContainer{
+    padding: 72px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+}
+
+.options{
+    border: dotted 3px white;
+}
+
+.options:hover{
+   cursor: pointer;
+   border: solid;
+
+}
+
+
+.addMaaser{
+    display: none;
+    background: rgb(41, 173, 190);;
+    width: 600px;
+
+    position: absolute;
+    top: 270px;
+    left: 50%;
+    transform: translate(-50%);
+    
+}
+
+.addMaaser div{
+    padding: 20px;
+}
+
+.addMaaser input{
+    background: rgb(41, 173, 190);;
+    border: solid 2px white;
+
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number]{
+    -moz-appearance: textfield;
+}
+
+.input[type=submit]{
+    padding: 15px;
+}
+
+.closeAdd{
+    position: absolute;
+    right: 100px;
+    top: -15px;
+    cursor: pointer;
+}
+
+footer{
+    position: relative;
+}
+
+footer img{
+    position: absolute;
+    margin-top: 50px;
+    width: 400px;
+    right: 150px;
+}
+
+.payMaaser{
+    display:  none;
+    background: rgb(41, 173, 190);;
+    width: 600px;
+
+    position: absolute;
+    top: 270px;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+.paybox{
+    
+    width: 300px;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    justify-self: center;
+}
+
+.payMaaser div{
+    padding: 20px;
+}
+
+.payMaaser input{
+    background: rgb(41, 173, 190);;
+    border: solid 2px white;
+
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number]{
+    -moz-appearance: textfield;
+}
+
+.closePayMaaser{
+    position: absolute;
+    right: 100px;
+    top: -15px;
+    cursor: pointer;
+}
+
+table{
+    color: white;
+    width: 100%;
+}
+
+.historyBox{
+    display: none;
+    position: absolute;
+    top: 160px;
+    left: 50%;
+    transform: translate(-50%);
+    background-color: rgb(41, 173, 190);;
+    height: 300px;
+    width: 700px;
+    overflow: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+     border: 1px solid white;
+}
+
+th{
+    background-color: white;
+    color: rgb(41, 173, 190);;
+    font-size: 30px;
+}
+
+ td{
+    padding-left: 30px;
+    padding-right: 30px;
+    
+}
+
+td{
+    font-size: 25px;
+}
+
+td:last-child{
+    font-size: 15px;
+}
+
+th:last-child{
+    font-size: 25px;
+}
+
+tr:nth-child(odd){
+    background-color: rgb(41, 173, 190);;
+}
+
+tr:nth-child(even){
+ background-color: rgb(138, 194, 201);;
+}
+
+
+.closeHistory{
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    cursor: pointer;
+}
+
+.printOUT{
+    position: absolute;
+    top: 0px;
+    right: 19px;
+    cursor: pointer;
+}
+
+.total{
+    display: none;
+    font-size: 40px;
+    text-align: center;
+}
+
+
+

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html> 
+    <head>
+        <title>My Maaser</title>
+
+        <link rel="stylesheet" href="style.css">
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/print-js/1.6.0/print.min.js"></script>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Charm:wght@400;700&family=Delius+Swash+Caps&family=Indie+Flower&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Lugrasimo&family=Radley:ital@0;1&family=Urbanist:ital,wght@0,100..900;1,100..900&family=Vidaloka&display=swap" rel="stylesheet">
+
+    </head>
+    <body>
+
+     <div class="box">
+   
+        <h1>My Maaser Balance Is = <div id="amount" class="amount"></div> </h1>
+
+        <div class="optContainer" >
+
+            <div class="options">
+              <h3 class="openAdd"> Add Maaser</h3>
+            </div>
+            <div class="options">
+                <h3 class="openPayMaaser">Pay Off Maaser </h3>
+            </div>
+            <div class="options">
+                <h3 class="openHistory"> History</h3>
+            </div>
+
+        </div>
+
+        <a href="https://matbia.org/dashboard" target="_blank">Go To Matbia</a>
+
+    </div>
+
+    <div class="addMaaser">
+
+        <form action="">
+
+            <svg class="closeAdd" xmlns="http://www.w3.org/2000/svg" height="19px" viewBox="0 -960 960 960" width="19px" fill="#FFFFFF"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg>
+          
+
+            <div>
+        <label for="">Earned Amount</label>
+        <input class="earnedInput" type="number" placeholder="Enter Your Income">
+            </div>
+
+            <div>
+          <label for="">Maaser Amount</label>
+          <input class="maaserInput" type="number" placeholder="Enter Your Maaser">
+            </div>
+
+            <div>
+                <label for="">Income week</label>
+                <input class="weekInput" type="date" >
+                <input class="week2Input" type="text" placeholder="Type Of Income">
+
+                    </div>
+        
+           
+        <input type="submit">
+            </div>
+
+        </form>
+
+    </div>
+
+    <div class="payMaaser">
+
+        <form class="payedForm" action="">
+
+            <svg class="closePayMaaser" xmlns="http://www.w3.org/2000/svg" height="19px" viewBox="0 -960 960 960" width="19px" fill="#FFFFFF"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg>
+
+            <div class="paybox">
+        <label for="">Amount  </label>
+        <input class="amountInput" type="number" placeholder="Enter Amount">
+            </div>
+
+            <div class="paybox">
+          <label for="">Donation To</label>
+          <input class="donationInput" type="text" placeholder="pay to ...">
+            </div>
+
+            <div>
+        <input type="submit">
+            </div>
+
+        </form>
+
+    </div>
+
+    <div class="historyBox">
+
+        <svg class="closeHistory" xmlns="http://www.w3.org/2000/svg" height="19px" viewBox="0 -960 960 960" width="19px" fill="#29adbe"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg>
+        <svg class="printOUT" xmlns="http://www.w3.org/2000/svg" height="19px" viewBox="0 -960 960 960" width="19px" fill="#29adbe"><path d="M640-640v-120H320v120h-80v-200h480v200h-80Zm-480 80h640-640Zm560 100q17 0 28.5-11.5T760-500q0-17-11.5-28.5T720-540q-17 0-28.5 11.5T680-500q0 17 11.5 28.5T720-460Zm-80 260v-160H320v160h320Zm80 80H240v-160H80v-240q0-51 35-85.5t85-34.5h560q51 0 85.5 34.5T880-520v240H720v160Zm80-240v-160q0-17-11.5-28.5T760-560H200q-17 0-28.5 11.5T160-520v160h80v-80h480v80h80Z"/></svg>
+
+         <table id="tableTP">
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th class="type">Type</th>
+                <th>Amount</th>
+                <th>Donation To</th>
+              </tr>
+            </thead>
+            <tbody>
+              
+            </tbody>
+            <tfoot  class="total" >
+                
+            </tfoot>
+        
+         </table>
+    </div>
+
+   
+        
+    <!-- <footer>
+        <img src="../../heart web/design/weblogo.jpg" alt="">
+    </footer> -->
+
+    <script type="module" src="js.js">
+        
+    </script>
+    </body>
+
+</html>

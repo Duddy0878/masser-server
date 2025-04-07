@@ -1,0 +1,33 @@
+{
+  "currentBalance": 200,
+  "donations": [
+    {
+      "donationId": "3d156282-e405-4d56-b940-a679f09be012",
+      "date": "04/07/25",
+      "type": "++",
+      "amount": "10",
+      "payedTo": "/"
+    },
+    {
+      "donationId": "5e48836c-71cb-4102-a1e7-a04a04638236",
+      "date": "04/07/25",
+      "type": "++",
+      "amount": "2",
+      "payedTo": "/"
+    },
+    {
+      "donationId": "d9354cce-30c0-4dbb-9afb-f5a4279aa65b",
+      "date": "04/07/25",
+      "type": "++",
+      "amount": "200",
+      "payedTo": "/"
+    },
+    {
+      "donationId": "1c928349-121a-4b25-be9f-1b7d77642089",
+      "date": "04/07/25",
+      "type": "--",
+      "amount": 17,
+      "payedTo": "k"
+    }
+  ]
+}
