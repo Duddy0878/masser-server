@@ -132,7 +132,7 @@ loadMaaser()
             }
         )
     
-        saveToStorage();
+        saveToStorage(maaser);
         displayBalance();
         
     })
