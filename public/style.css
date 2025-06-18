@@ -271,22 +271,14 @@ tr:nth-child(even){
         margin-top: 0px;
     }
 
-    /* .amount{
-        display: block;
-        
-    }
-
-    .equal{
-      display: none;
-    } */
-
     .settings{
-    top:10px;
-  
+    top:7px;
+    right: 7;
     }
 
     .payCheck{
-        top: 8px;
+        top: 5px;
+        right: 47px;
     }
 
     .optContainer{
