@@ -294,9 +294,9 @@ tr:nth-child(even){
     width: 100%;
 
     position: absolute;
-    /* top: 270px;
+    top: 0px;
     left: 50%;
-    transform: translate(-50%); */
+    transform: translate(-50%);
     
 }
     
