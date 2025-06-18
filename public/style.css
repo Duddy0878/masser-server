@@ -289,6 +289,16 @@ tr:nth-child(even){
         grid-template-columns: 1fr;
         gap: 10px;
    }
+
+   .addMaaser{
+    width: 100%;
+
+    position: absolute;
+    /* top: 270px;
+    left: 50%;
+    transform: translate(-50%); */
+    
+}
     
 }
 
