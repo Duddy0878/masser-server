@@ -12,7 +12,7 @@ const bucketName = 'maasser_1';
 const fileName = 'data.json';
 
 // Initialize Google Cloud Storage
-const { Storage } = require('@google-cloud/storage');
+
 
 let storage;
 if (process.env.GOOGLE_APPLICATION_CREDENTIALS_JSON) {
