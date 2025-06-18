@@ -260,10 +260,10 @@ tr:nth-child(even){
     }
 
     .optContainer{
-        padding: 72px;
+        padding: 22px;
         display: grid;
         grid-template-columns: 1fr;
-        gap: 20px;
+        gap: 10px;
    }
     
 }
