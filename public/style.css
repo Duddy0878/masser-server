@@ -267,7 +267,8 @@ tr:nth-child(even){
 
     .box{
         width: 90%;
-        border: solid 2px red;
+        border: none;
+        margin-top: 0px;
     }
 
     .amount{
@@ -277,6 +278,15 @@ tr:nth-child(even){
 
     .equal{
       display: none;
+    }
+
+    .settings{
+    top:10px;
+  
+    }
+
+    .payCheck{
+        top: 8px;
     }
 
     .optContainer{
