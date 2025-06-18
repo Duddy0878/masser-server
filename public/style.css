@@ -273,12 +273,14 @@ tr:nth-child(even){
 
     .settings{
     top:4px !important;
-    right: 7 !important;
+    right: 2px !important;
+    transform: scale(0.6);
     }
 
     .payCheck{
-        top: 2px !important;
-        right: 47px !important;
+       top: 2px !important;
+       right: 22px !important;
+       transform: scale(0.6);
     }
 
     .optContainer{
