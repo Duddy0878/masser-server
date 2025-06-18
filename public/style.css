@@ -271,14 +271,14 @@ tr:nth-child(even){
         margin-top: 0px;
     }
 
-    .amount{
+    /* .amount{
         display: block;
         
     }
 
     .equal{
       display: none;
-    }
+    } */
 
     .settings{
     top:10px;
