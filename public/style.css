@@ -273,7 +273,7 @@ tr:nth-child(even){
 
     .settings{
     top:7px;
-    right: 7;
+    right: 7 !important;
     width: 10px !important; 
     height: 10px !important;
     }
