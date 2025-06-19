@@ -232,6 +232,7 @@ tr:nth-child(even){
     top: 0px;
     right: 0px;
     cursor: pointer;
+    transform: scale(0.8);
 }
 
 .printOUT{
@@ -292,8 +293,6 @@ tr:nth-child(even){
 
    .addMaaser{
     width: 100%;
-
-    position: absolute;
     top: 100px;
     left: 50%;
     transform: translate(-50%);
@@ -307,7 +306,60 @@ tr:nth-child(even){
    .dateDisplay{
     padding-bottom: 10px !important;
    }
+
+   .payMaaser{
+    width: 100%;
+    height: 200px;
+    top: 100px;
+    left: 50%;
+    transform: translate(-50%);
+    }
+
+    .closePayMaaser{
+    right: 10px;
+    }  
     
+    .historyBox{
+    top: 100px;
+    height: 300px;
+    width: 90%;
+    }
+
+    th{
+    font-size: 10px;
+    }
+
+    td{
+        padding-left: 10px;
+        padding-right: 10px;
+        
+    }
+
+    td{
+        font-size: 10px;
+    }
+
+    td:last-child{
+        font-size: 10px;
+        text-align: start;
+    }
+
+    th:last-child{
+        font-size: 15px;
+        text-align: start;
+    }
+
+    .closeHistory{
+    transform: scale(0.8);
+    }  
+
+    .printOUT{
+        transform: scale(0.8);
+    }
+
+    .download{
+       transform: scale(0.8);
+    }
 }
 
 
