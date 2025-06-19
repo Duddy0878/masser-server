@@ -298,7 +298,15 @@ tr:nth-child(even){
     left: 50%;
     transform: translate(-50%);
     
-}
+   }
+
+   .closeAdd{
+    right: 10px;
+   }
+
+   .dateDisplay{
+    padding-bottom: 10px !important;
+   }
     
 }
 
