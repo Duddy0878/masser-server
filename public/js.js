@@ -493,7 +493,7 @@ loadMaaser()
             renderYearCalendar();
         
          })
-         console.log(document.queryselector('.calnder'));
+         console.log(document.qquerySelector('.calnder'));
     
     }
     renderYearCalendar();
