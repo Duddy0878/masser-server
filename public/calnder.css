@@ -111,4 +111,17 @@ height: 50px;
    padding-left: 16px;
    padding-right: 16px;
 }
+
+.calendar-table {
+    border-collapse: collapse;
+    width: 120px;
+    margin: 0 auto;
+}
+.calendar-table th, .calendar-table td {
+    border: 1px solid #ddd;
+    width: 28px;
+    height: 28px;
+    text-align: center;
+    font-size: 15px;
+}
 }
