@@ -119,8 +119,8 @@ height: 50px;
 }
 .calendar-table th, .calendar-table td {
     border: 1px solid #ddd;
-    width: 28px;
-    height: 28px;
+    width: 18px;
+    height: 18px;
     text-align: center;
     font-size: 15px;
 }
