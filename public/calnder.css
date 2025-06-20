@@ -31,16 +31,16 @@ h3{
     transform: scale(1.2);
 }
 
-.calnder table {
+/* .calnder table {
     width: 350px;
     height: 250px;
-}
+} */
 
-.calnder td{
+/* .calnder td{
    width: 30px;
    padding-left: 16px;
    padding-right: 16px;
-}
+} */
 
 .month-container {
     display: none;
@@ -101,27 +101,27 @@ h3{
 }
 
 @media(max-width: 500px) {
-.calnder table {
-width: 150px;
-height: 50px;
-}
+   .x{
+     right: 19px;
+    }
 
-.calnder td{
-   width: 10px;
-   padding-left: 16px;
-   padding-right: 16px;
-}
+   .auto{
+     top: 20px;
+     left: 40px;
+   }
 
-.calendar-table {
-    border-collapse: collapse;
+  .calendar-table {
     width: 120px;
-    margin: 0 auto;
-}
-.calendar-table th, .calendar-table td {
-    border: 1px solid #ddd;
+    height: 230px;
+  } 
+
+  .calendar-table th, .calendar-table td {
     width: 18px;
     height: 18px;
-    text-align: center;
     font-size: 10px;
-}
+  } 
+
+  .left-arrow, .right-arrow {
+    padding-top: 13px;
+  }
 }
