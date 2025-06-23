@@ -12,23 +12,10 @@ body{
     background-color: rgb(41, 173, 190);
 }
 
-.header-row {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 2px; /* space between logo and header */
-  padding-top: 30px;
-}
-
 h1{
-    display: inline-block;
+    padding-top: 30px;
     font-size: 30px;
-   font-weight: 400;
-}
-
-.logoMain{
-    padding-bottom: 6px;
-    width: 340px;
+   font-weight: 500;
 }
 
 .settings{
@@ -274,12 +261,7 @@ tr:nth-child(even){
 
     h1{
        font-size: 20px;
-       font-weight: 300px;
-    }
-
-    .logoMain{
-    padding-bottom: 0px;
-    width: 147px;
+       font-weight: 400px;
     }
 
     h3{
