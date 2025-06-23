@@ -25,6 +25,16 @@ h1{
     cursor: pointer;
 }
 
+.settingsCon{
+   background: rgb(41, 173, 190);
+   position: absolute;
+   top: 0;
+   width: 100%;
+   height: 100%;
+   margin-left: 50%;
+   transform: translate(-50%);
+}
+
 .payCheck{
     position: absolute;
     right: 60px;
