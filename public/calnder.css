@@ -146,7 +146,7 @@ h3{
 }
 
 .colorSwitch{
-  
+  cursor: pointer;
 }
 
 li select{
@@ -157,6 +157,7 @@ li select{
   background: #fff;
   font-size: 15px;
   color: rgb(41, 173, 190);
+  cursor: pointer;
 }
 
 li option{

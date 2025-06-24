@@ -277,6 +277,12 @@ loadMaaser()
         settingsModal.style.display = 'none';
     })
 
+    var colorChange = document.querySelector('.colorSwitch');
+
+    colorChange.addEventListener('click', () => {
+        alert('color change not working yet');
+    })
+
 
 
     // ========= payCheck =============
