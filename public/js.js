@@ -262,7 +262,23 @@ loadMaaser()
     
         doc.save('maaser_history.pdf');
     });
+
+    // ===== settings ==============
     
+    var settingsBtn = document.querySelector('.settings');
+    var settingsModal = document.querySelector('.settingsCon');
+    var closeSettings = document.querySelector('.closeSettings');
+
+    settingsBtn.addEventListener('click', () => {
+        settingsModal.style.display = 'block';
+    })
+
+    closeSettings.addEventListener('click', () => {
+        settingsModal.style.display = 'none';
+    })
+
+
+
     // ========= payCheck =============
     
     var payCheckBtn = document.querySelector('.payCheck');
