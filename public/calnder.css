@@ -121,7 +121,7 @@ h3{
 }
 
 .settingsCon{
-  display: none;
+  display: block;
    background: rgb(41, 173, 190);
    position: absolute;
    top: 0;

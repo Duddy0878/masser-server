@@ -1,6 +1,11 @@
+  :root{
+    --backroundBlue : rgb(41, 173, 190);
+    --mainWhite : white;
+  }
+
 *{
     font-family: Indie Flower;
-    color: white;
+    color: var(--mainWhite);
     text-align: center;
 }
 
@@ -9,7 +14,7 @@ svg:hover{
 }
 
 body{
-    background-color: rgb(41, 173, 190);
+    background-color: var(--backroundBlue);
 }
 
 h1{
@@ -44,7 +49,7 @@ a:hover{
 }
 
 .box{
-   border: solid 4px white;
+   border: solid 4px var(--mainWhite);
    width: 53%;
    margin-left: 50%;
    transform: translate(-50%);
@@ -63,7 +68,7 @@ a:hover{
 }
 
 .options{
-    border: dotted 3px white;
+    border: dotted 3px var(--mainWhite)
 }
 
 .options:hover{
@@ -75,7 +80,7 @@ a:hover{
 
 .addMaaser{
     display: none;
-    background: rgb(41, 173, 190);;
+    background: var(--backroundBlue);
     width: 600px;
 
     position: absolute;
@@ -95,8 +100,8 @@ a:hover{
 }
 
 .addMaaser input, .addMaaser select{
-    background: rgb(41, 173, 190);;
-    border: solid 2px white;
+    background: var(--backroundBlue);
+    border: solid 2px var(--mainWhite);
 
 }
 input::-webkit-outer-spin-button,
@@ -133,7 +138,8 @@ footer img{
 
 .payMaaser{
     display:  none;
-    background: rgb(41, 173, 190);;
+    background: var(--backroundBlue);
+    
     width: 600px;
 
     position: absolute;
@@ -155,8 +161,8 @@ footer img{
 }
 
 .payMaaser input{
-    background: rgb(41, 173, 190);;
-    border: solid 2px white;
+    background: var(--backroundBlue);
+    border: solid 2px var(--mainWhite);
 
 }
 input::-webkit-outer-spin-button,
@@ -177,7 +183,7 @@ input[type=number]{
 }
 
 table{
-    color: white;
+    color: var(--mainWhite);
     width: 100%;
 }
 
@@ -187,18 +193,18 @@ table{
     top: 160px;
     left: 50%;
     transform: translate(-50%);
-    background-color: rgb(41, 173, 190);;
+    background-color: var(--backroundBlue);
     height: 300px;
     width: 700px;
     overflow: scroll;
     -ms-overflow-style: none;
     scrollbar-width: none;
-     border: 1px solid white;
+     border: 1px solid var(--mainWhite);
 }
 
 th{
-    background-color: white;
-    color: rgb(41, 173, 190);;
+    background-color: var(--mainWhite);
+    color: var(--backroundBlue);
     font-size: 30px;
 }
 
