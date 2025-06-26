@@ -151,7 +151,7 @@ footer img{
 .payMaaser{
     display:  none;
     background: var(--backroundBlue);
-    
+    color: rgb(27, 0, 0);
     width: 600px;
 
     position: absolute;
@@ -209,7 +209,7 @@ table{
     top: 160px;
     left: 50%;
     transform: translate(-50%);
-    background-color: rgb(138, 194, 201);
+    background-color: rgb(41, 173, 190);;
     height: 300px;
     width: 700px;
     overflow: scroll;
@@ -220,7 +220,7 @@ table{
 
 th{
     background-color: white;
-    color: rgb(138, 194, 201);
+    color: rgb(41, 173, 190);;
     font-size: 30px;
 }
 
@@ -256,7 +256,6 @@ tr:nth-child(even){
     top: 0px;
     right: 0px;
     cursor: pointer;
-    transform: scale(0.8);
 }
 
 .printOUT{
