@@ -9,10 +9,6 @@
     text-align: center;
 }
 
-svg{
-  fill: var(--mainWhite);
-}
-
 svg:hover{
     transform: scale(1.1);
 }
@@ -32,6 +28,14 @@ h1{
     right: 20px;
     top:20px;
     cursor: pointer;
+}
+
+.settings svg{
+    fill: var(--mainWhite);
+}
+
+.payCheck svg, circle{
+    fill: var(--mainWhite);
 }
 
 .payCheck{
@@ -129,6 +133,10 @@ input[type=number]{
     cursor: pointer;
 }
 
+svg.closeAdd{
+    fill: var(--mainWhite);
+}
+
 footer{
     position: relative;
 }
@@ -186,6 +194,10 @@ input[type=number]{
     cursor: pointer;
 }
 
+svg.closePayMaaser{
+    fill: var(--mainWhite);
+}
+
 table{
     color: var(--mainWhite);
     width: 100%;
@@ -197,18 +209,18 @@ table{
     top: 160px;
     left: 50%;
     transform: translate(-50%);
-    background-color: var(--backroundBlue);
+    background-color: rgb(138, 194, 201);
     height: 300px;
     width: 700px;
     overflow: scroll;
     -ms-overflow-style: none;
     scrollbar-width: none;
-     border: 1px solid var(--mainWhite);
+     border: 1px solid white;
 }
 
 th{
-    background-color: var(--mainWhite);
-    color: var(--backroundBlue);
+    background-color: white;
+    color: rgb(138, 194, 201);
     font-size: 30px;
 }
 

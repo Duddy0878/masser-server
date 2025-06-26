@@ -181,9 +181,9 @@ li option{
   cursor: pointer;
 }
 
-/* svg.closeSettings{
+svg.closeSettings{
   fill: var(--mainWhite);
-} */
+}
 
 .closeSettings:hover {
   transform: scale(1.2);
