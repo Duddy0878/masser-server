@@ -1,3 +1,9 @@
+    :root{
+    --backroundBlue : rgb(41, 173, 190);
+    --mainWhite : white;
+  }
+
+
 h3{
     cursor: default;
 }
@@ -5,8 +11,8 @@ h3{
     display: none;
     width:100%;
     height: 100%;
-    border: solid 4px white;
-    background: rgb(41, 173, 190);;
+    border: solid 4px var(--mainWhite);
+    background: var(--backroundBlue);
     position: absolute;
     top: 0;
     right: 0;
@@ -18,9 +24,13 @@ h3{
     right: 34px;
 }
 
+.x svg{
+  fill: var(--mainWhite);
+}
+
 .auto{
     position: absolute;
-    color: rgb(41, 173, 190);
+    color: var(--backroundBlue);
     top: 40px;
     left: 64px;
 }
@@ -35,11 +45,11 @@ h3{
     display: none;
     vertical-align: top;
     margin: 10px;
-    border: 1px solid #eee;
+    border: 1px solid var(--mainWhite);
     border-radius: 8px;
     padding: 8px;
-    background: #fafcff;
-    box-shadow: 0 2px 8px #eee;
+    background: var(--mainWhite);
+    box-shadow: 0 2px 8px var(--mainWhite);
 }
 
 
@@ -50,7 +60,7 @@ h3{
     margin: 0 auto;
 }
 .calendar-table th, .calendar-table td {
-    border: 1px solid #ddd;
+    border: 1px solid var(--mainWhite);
     width: 28px;
     height: 28px;
     text-align: center;
@@ -60,22 +70,22 @@ h3{
 }
 .today {
     font-weight: bold;
-    color: #29adbe;
-    background: #fff !important;
+    color: var(--backroundBlue);
+    background: var(--mainWhite) !important;
 }
 
 .weekPayed{
-    border: 2px solid #29adbe;
+    border: 2px solid var(--backroundBlue);;
     font-weight: bold;
-    color: #29adbe;
+    color: var(--backroundBlue);
     background: lightgreen !important;
     box-sizing: border-box;
 }
 
 .notPayed{
-      border: 2px solid #29adbe;
+      border: 2px solid var(--backroundBlue);
     font-weight: bold;
-    color: #29adbe;
+    color: var(--backroundBlue);
     background: lightcoral !important;
     box-sizing: border-box;
 }
@@ -85,7 +95,7 @@ h3{
   transition: transform 0.2s;
   display: inline-block;
   cursor:pointer;
-  color:rgb(41, 173, 190);
+  color:var(--backroundBlue);
 }
 
 .left-arrow:hover, .right-arrow:hover {
@@ -122,7 +132,7 @@ h3{
 
 .settingsCon{
    display: block;
-   background: rgb(41, 173, 190);
+   background: var(--backroundBlue);
    position: absolute;
    top: 0;
    width: 100%;
@@ -153,15 +163,15 @@ li select{
   height: 30px;
   border-radius: 5px;
   border: none;
-  background: #fff;
+  background: var(--mainWhite);
   font-size: 15px;
-  color: rgb(41, 173, 190);
+  color: var(--backroundBlue);
   cursor: pointer;
 }
 
 li option{
-  background: #fff;
-  color: rgb(41, 173, 190);
+  background: var(--mainWhite);
+  color: var(--backroundBlue);
 }
 
 .closeSettings{
@@ -170,6 +180,10 @@ li option{
   right: 34px;
   cursor: pointer;
 }
+
+/* svg.closeSettings{
+  fill: var(--mainWhite);
+} */
 
 .closeSettings:hover {
   transform: scale(1.2);

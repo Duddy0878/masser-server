@@ -9,6 +9,10 @@
     text-align: center;
 }
 
+svg{
+  fill: var(--mainWhite);
+}
+
 svg:hover{
     transform: scale(1.1);
 }
