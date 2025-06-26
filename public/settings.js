@@ -5,7 +5,7 @@ let isSwapped = false;
 
 colorSwitchBtn.addEventListener('click', () => {
   if (!isSwapped) {
-    document.documentElement.style.setProperty('--backroundBlue', 'white');
+    document.documentElement.style.setProperty('--backroundBlue', 'lightgray');
     document.documentElement.style.setProperty('--mainWhite', 'rgb(41, 173, 190)');
     isSwapped = true;
   } else {
