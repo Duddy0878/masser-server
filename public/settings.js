@@ -9,6 +9,8 @@ const colorSwitchBtn = document.querySelector('.colorSwitch');
 
 colorSwitchBtn.addEventListener('click', () => {
   if (localStorage.getItem('isSwapped') === false) {
+    console.log('hi');
+    
     document.documentElement.style.setProperty('--backroundBlue', 'rgb(6, 5, 5)');
     document.documentElement.style.setProperty('--mainWhite', 'rgb(41, 173, 190)');
     localStorage.setItem('isSwapped', true);
