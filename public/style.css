@@ -217,6 +217,8 @@ table{
 }
 
 #historyContainer{
+    height: 300px;
+    width: 700px;
     overflow: scroll;
     -ms-overflow-style: none;
     scrollbar-width: none;
