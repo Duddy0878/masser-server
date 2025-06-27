@@ -210,8 +210,6 @@ table{
     left: 50%;
     transform: translate(-50%);
     background-color: rgb(41, 173, 190);;
-    height: 300px;
-    width: 700px;
     border: 1px solid white;
     color: white;
 }
