@@ -24,7 +24,7 @@ h3{
     right: 34px;
 }
 
-.x svg{
+svg.x{
   fill: var(--mainWhite);
 }
 
