@@ -212,11 +212,13 @@ table{
     background-color: rgb(41, 173, 190);;
     height: 300px;
     width: 700px;
+    border: 1px solid white;
+    color: white;
+}
+.historyContainer{
     overflow: scroll;
     -ms-overflow-style: none;
     scrollbar-width: none;
-    border: 1px solid white;
-    color: white;
 }
 
 thead{
