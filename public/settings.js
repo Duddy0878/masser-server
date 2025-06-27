@@ -15,6 +15,6 @@ colorSwitchBtn.addEventListener('click', () => {
   } else {
     document.documentElement.style.setProperty('--backroundBlue', 'rgb(41, 173, 190)');
     document.documentElement.style.setProperty('--mainWhite', 'white');
-    ilocalStorage.getItem('isSwapped') === false;
+    localStorage.getItem('isSwapped') === false;
   }
 });
