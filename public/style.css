@@ -220,6 +220,9 @@ table{
 }
 
 th{
+    position: sticky;
+    top: 0px;
+    z-index: 2;
     background-color: white;
     color: rgb(41, 173, 190);;
     font-size: 30px;
@@ -228,10 +231,6 @@ th{
  td{
     padding-left: 30px;
     padding-right: 30px;
-    
-}
-
-td{
     font-size: 25px;
     color: white;
 }
