@@ -257,7 +257,7 @@ tr:nth-child(even){
 
 
 .closeHistory{
-    position: sticky;
+    position: absolute;
     z-index: 3;
     top: 0px;
     right: 0px;
