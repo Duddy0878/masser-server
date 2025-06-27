@@ -205,7 +205,7 @@ table{
 
 .historyBox{
     display: none;
-    position: relative;
+    position: absolute;
     top: 160px;
     left: 50%;
     transform: translate(-50%);
@@ -215,7 +215,8 @@ table{
     border: 1px solid white;
     color: white;
 }
-.historyContainer{
+
+#historyContainer{
     overflow: scroll;
     -ms-overflow-style: none;
     scrollbar-width: none;
