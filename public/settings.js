@@ -1,7 +1,9 @@
 
+localStorage.setItem('isSwapped', false);
+
 
 const colorSwitchBtn = document.querySelector('.colorSwitch');
-let isSwapped = false;
+let isSwapped = localStorage.getItem('isSwapped');
 
 colorSwitchBtn.addEventListener('click', () => {
   if (!isSwapped) {
