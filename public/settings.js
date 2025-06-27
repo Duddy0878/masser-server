@@ -9,6 +9,8 @@ const colorSwitchBtn = document.querySelector('.colorSwitch');
 
 colorSwitchBtn.addEventListener('click', () => {
   var isSwapped = localStorage.getItem('isSwapped');
+  console.log('hi');
+  
   if (!isSwapped) {
     console.log('hi');
     
