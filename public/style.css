@@ -253,21 +253,24 @@ tr:nth-child(even){
 
 
 .closeHistory{
-    position: absolute;
+    position: sticky;
+    z-index: 3;
     top: 0px;
     right: 0px;
     cursor: pointer;
 }
 
 .printOUT{
-    position: absolute;
+    position: sticky;
+    z-index: 3;
     top: 0px;
     right: 19px;
     cursor: pointer;
 }
 
 .download{
-    position: absolute;
+    position: sticky;
+    z-index: 3;
     top: 0px;
     right: 38px;
     cursor: pointer;
