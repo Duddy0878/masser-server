@@ -17,8 +17,6 @@ if (localStorage.getItem('isSwapped') === null) {
 
       // ===== settings theme ==============
 
-    var isSwapped = JSON.parse(localStorage.getItem('isSwapped'));
-
     var colorChange = document.querySelector('.colorSwitch');
 
     var onHTML = `
@@ -30,7 +28,8 @@ if (localStorage.getItem('isSwapped') === null) {
     `
   
     function displaySwitch(){
-  
+     var isSwapped = JSON.parse(localStorage.getItem('isSwapped'));
+
     if (!isSwapped) {
         colorChange.innerHTML = offHTML;
     } else {
@@ -38,6 +37,8 @@ if (localStorage.getItem('isSwapped') === null) {
     }
 
     }
+
+    displaySwitch();
 
 
 
@@ -52,6 +53,8 @@ if (localStorage.getItem('isSwapped') === null) {
     }
 
     function displayTheme(){
+       var isSwapped = JSON.parse(localStorage.getItem('isSwapped'));
+
       if (!isSwapped) {
        lightTheme();
       } else {
@@ -61,7 +64,6 @@ if (localStorage.getItem('isSwapped') === null) {
 
     
     displayTheme();
-    displaySwitch();
 
 
 
