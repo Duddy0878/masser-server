@@ -136,6 +136,7 @@ function changeCharity() {
       addCustom.addEventListener('click', () => {
          customCharity.push({name: customName.value, url: customUrl.value});
          localStorage.setItem('customCharity', JSON.stringify(customCharity));
+         customMoadal.style.display = 'none';
       })
 
       cancelCustom.addEventListener('click', () => {
