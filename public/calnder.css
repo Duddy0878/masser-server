@@ -76,7 +76,7 @@ svg.x{
     box-sizing: border-box;
     border: rgb(41, 173, 190) 2px solid;
     background: white !important;
-    box-shadow: 0 0 0 4px rgb(41, 173, 190);
+    box-shadow: 0 0 0 2px rgb(41, 173, 190);
 }
 
 .weekPayed{
