@@ -31,7 +31,7 @@ if (localStorage.getItem('isSwapped') === null) {
   
     function displaySwitch(){
   
-    if (isSwapped) {
+    if (isSwapped === true) {
         colorChange.innerHTML = onHTML;
     } else {
         colorChange.innerHTML = offHTML;
