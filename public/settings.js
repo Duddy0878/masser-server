@@ -120,6 +120,8 @@ function changeCharity() {
   charitySelect.addEventListener('change', function() {
     localStorage.setItem('charity', charitySelect.value);
   })
+
+  displayCharidy();
 }
 
 changeCharity();
