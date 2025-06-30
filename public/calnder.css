@@ -136,7 +136,7 @@ svg.x{
 }
 
 .settingsCon{
-   display: block;
+   display: none;
    background: var(--backroundBlue);
    position: absolute;
    top: 0;
