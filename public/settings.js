@@ -85,3 +85,42 @@ colorChange.addEventListener('click', () => {
   displaySwitch();
   
 });
+
+
+// ====== charedy options ======
+
+if (localStorage.getItem('charity') === null) {
+  localStorage.setItem('charity', "matbia");
+}
+
+function displayCharidy(){
+var myCharity = localStorage.getItem('charity');
+var goTo = document.querySelector('.goTo');
+
+if (myCharity === 'matbia') {
+  goTo.href = 'https://matbia.org/dashboard';
+  goTo.textContent = 'Go To Matbia';
+}
+else if (myCharity === 'ojc') {
+  goTo.href = 'https://ojcfund.org'
+  goTo.textContent = 'Go To OJC';
+}
+
+}
+
+displayCharidy();
+
+function changeCharity() {
+  var charitySelect = document.getElementById('charitySelect');
+
+  charitySelect.addEventListener('change', function() {
+    localStorage.setItem('charity', charitySelect.value);
+  })
+}
+
+changeCharity();
+
+
+
+
+
