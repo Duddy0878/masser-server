@@ -72,6 +72,7 @@ svg.x{
     font-weight: bold;
     color: rgb(41, 173, 190);
     border-radius: 20%;
+    box-sizing: border-box;;
     background: white !important;
 }
 
