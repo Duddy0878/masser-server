@@ -60,7 +60,7 @@ svg.x{
     margin: 0 auto;
 }
 .calendar-table th, .calendar-table td {
-    border: 1px solid var(--mainWhite);
+    border: 1px solid white;
     width: 28px;
     height: 28px;
     text-align: center;
@@ -70,14 +70,14 @@ svg.x{
 }
 .today {
     font-weight: bold;
-    color: var(--backroundBlue);
-    background: var(--mainWhite) !important;
+    color: white;
+    background: white !important;
 }
 
 .weekPayed{
-    border: 2px solid var(--backroundBlue);;
+    border: 2px solid var(--backroundBlue);
     font-weight: bold;
-    color: var(--backroundBlue);
+    color: white;
     background: lightgreen !important;
     box-sizing: border-box;
 }
