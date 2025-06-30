@@ -89,7 +89,7 @@ colorChange.addEventListener('click', () => {
 
 // ====== charedy options ======
 
-customCharity = [];
+var customCharity = [];
 
 if (localStorage.getItem('myCharity') === null) {
   localStorage.setItem('myCharity', "matbia");
