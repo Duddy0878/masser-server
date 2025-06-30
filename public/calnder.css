@@ -61,16 +61,13 @@ svg.x{
 }
 .calendar-table th, .calendar-table td {
     border: 1px solid white;
+    background: rgb(41, 173, 190);
     width: 28px;
     height: 28px;
     text-align: center;
     font-size: 15px;
     padding-left: 16px;
     padding-right: 16px;
-}
-
-.calendar-table tr{
-  background-color: rgb(41, 173, 190);
 }
 
 .today {
@@ -163,6 +160,8 @@ svg.x{
 }
 
 .colorSwitch{
+  display: flex;
+  align-items: start;
   cursor: pointer;
 }
 

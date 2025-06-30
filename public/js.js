@@ -361,7 +361,7 @@ loadMaaser()
             monthContainer.id = `month-${month}`;
             // Month name
             const monthName = dayjs(`${year}-${month + 1}-01`).format('MMMM');
-            monthContainer.innerHTML = `<h3 style="text-align:center;color:rgb(41, 173, 190);margin:10px 0;">
+            monthContainer.innerHTML = `<h3 style="text-align:center;color:var(--backroundBlue);margin:10px 0;">
             <span class="left-arrow">&#9664;</span>&nbsp;&nbsp;${monthName}&nbsp;&nbsp;<span class="right-arrow">&#9654;</span>
             </h3>`;
     
