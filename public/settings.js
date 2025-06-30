@@ -99,8 +99,12 @@ var myCharity = localStorage.getItem('myCharity');
 
 var goTo = document.querySelector('.goTo');
 
-  if (charitySelect && myCharity) {
+  if (charitySelect && myCharity && charitySelect.value === 'matbia' || charitySelect.value === 'ojc') {
     charitySelect.value = myCharity;
+  }
+
+  else{
+  charitySelect.value = 'add';
   }
 
 if (myCharity === 'matbia') {
