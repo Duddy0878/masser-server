@@ -61,7 +61,6 @@ svg.x{
 }
 .calendar-table th, .calendar-table td {
     border: 1px solid white;
-    background: rgb(41, 173, 190);
     width: 28px;
     height: 28px;
     text-align: center;
@@ -76,7 +75,8 @@ svg.x{
     border-radius: 50%;
     box-sizing: border-box;
     border: rgb(41, 173, 190) 2px solid;
-    background: white;
+    background: white !important;
+    box-shadow: 0 0 0 4px rgb(41, 173, 190);
 }
 
 .weekPayed{
