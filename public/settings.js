@@ -89,7 +89,6 @@ colorChange.addEventListener('click', () => {
 
 // ====== charedy options ======
 
-var customCharity = JSON.parse(localStorage.getItem('customCharity')) ;
 
 if (localStorage.getItem('myCharity') === null) {
   localStorage.setItem('myCharity', "matbia");
@@ -97,6 +96,7 @@ if (localStorage.getItem('myCharity') === null) {
 
 function displayCharidy(){
 var myCharity = localStorage.getItem('myCharity');
+
 var goTo = document.querySelector('.goTo');
 
   if (charitySelect && myCharity) {
@@ -110,6 +110,12 @@ if (myCharity === 'matbia') {
 else if (myCharity === 'ojc') {
   goTo.href = 'https://ojcfund.org'
   goTo.textContent = 'Go To OJC';
+}
+else{
+  var getCustomCharity = JSON.parse(localStorage.getItem('customCharity'));
+  goTo.href = getCustomCharity.url;
+  goTo.textContent = `Go To ${getCustomCharity.name}`
+  
 }
 
 }
@@ -134,8 +140,13 @@ function changeCharity() {
       var cancelCustom = document.querySelector('.buttons button[type="reset"]');
 
       addCustom.addEventListener('click', () => {
-         customCharity.push({name: customName.value, url: customUrl.value});
+         customCharity = {name: customName.value, url: customUrl.value};
+         
          localStorage.setItem('customCharity', JSON.stringify(customCharity));
+
+         localStorage.setItem('myCharity', customName.value);
+         displayCharidy();
+
          customName.value = '';
          customUrl.value = '';
          customMoadal.style.display = 'none';
