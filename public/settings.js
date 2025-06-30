@@ -39,16 +39,27 @@ if (localStorage.getItem('isSwapped') === null) {
 
     }
 
+
+
+    function darkTheme(){
+       document.documentElement.style.setProperty('--backroundBlue', 'rgb(6, 5, 5)');
+        document.documentElement.style.setProperty('--mainWhite', 'rgb(41, 173, 190)');
+    }
+
+    function lightTheme(){
+        document.documentElement.style.setProperty('--backroundBlue', 'rgb(41, 173, 190)');
+        document.documentElement.style.setProperty('--mainWhite', 'white');
+    }
+
     function displayTheme(){
       if (!isSwapped) {
-         document.documentElement.style.setProperty('--backroundBlue', 'rgb(41, 173, 190)');
-        document.documentElement.style.setProperty('--mainWhite', 'white');
+       lightTheme();
       } else {
-        document.documentElement.style.setProperty('--backroundBlue', 'rgb(6, 5, 5)');
-        document.documentElement.style.setProperty('--mainWhite', 'rgb(41, 173, 190)');
-
+       darkTheme();
        }
     }
+
+    
     displayTheme();
     displaySwitch();
 
@@ -61,12 +72,10 @@ colorChange.addEventListener('click', () => {
   
   if (!isSwapped) {
     
-    document.documentElement.style.setProperty('--backroundBlue', 'rgb(6, 5, 5)');
-    document.documentElement.style.setProperty('--mainWhite', 'rgb(41, 173, 190)');
+   darkTheme();
     localStorage.setItem('isSwapped', true);
   } else {
-    document.documentElement.style.setProperty('--backroundBlue', 'rgb(41, 173, 190)');
-    document.documentElement.style.setProperty('--mainWhite', 'white');
+    lightTheme();
     localStorage.setItem('isSwapped', false);
   }
 
