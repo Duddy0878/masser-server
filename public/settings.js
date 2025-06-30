@@ -16,7 +16,7 @@ if (localStorage.getItem('isSwapped') === null) {
     })
 
       // ===== settings theme ==============
-
+    var isSwapped = false;
     var colorChange = document.querySelector('.colorSwitch');
 
     var onHTML = `
@@ -28,7 +28,7 @@ if (localStorage.getItem('isSwapped') === null) {
     `
   
     function displaySwitch(){
-     var isSwapped = JSON.parse(localStorage.getItem('isSwapped'));
+     isSwapped = JSON.parse(localStorage.getItem('isSwapped'));
 
     if (!isSwapped) {
         colorChange.innerHTML = offHTML;
@@ -53,7 +53,7 @@ if (localStorage.getItem('isSwapped') === null) {
     }
 
     function displayTheme(){
-       var isSwapped = JSON.parse(localStorage.getItem('isSwapped'));
+      isSwapped = JSON.parse(localStorage.getItem('isSwapped'));
 
       if (!isSwapped) {
        lightTheme();
