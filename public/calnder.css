@@ -136,7 +136,7 @@ svg.x{
 }
 
 .settingsCon{
-   display: none;
+   display: block;
    background: var(--backroundBlue);
    position: absolute;
    top: 0;
@@ -231,4 +231,34 @@ svg.closeSettings{
   background: var(--mainWhite);
   color: var(--backroundBlue);
   transition: 0.3s;
+}
+
+@media(max-width: 500px) {
+  .settingsCon ul{
+     padding-left: 5%;
+     font-size: 15px;
+  }
+
+  .settingsCon ul li{
+    padding: 3px;
+  }
+
+
+  li select{
+  width: 100px;
+  height: 15px;
+  font-size: 10px;
+}
+
+.addCharityModal{
+  display: none;
+  position: absolute;
+  top: 65px;
+  right: 24px;
+  width: 200px;
+  background: var(--backroundBlue);
+  gap: 10px;
+  padding: 10px;
+}
+
 }
