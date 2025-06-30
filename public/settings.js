@@ -133,13 +133,17 @@ function changeCharity() {
       var addCustom = document.querySelector('.buttons button[type="submit"]');
       var cancelCustom = document.querySelector('.buttons button[type="reset"]');
 
-      addCustom.addEventListener('submit', () => {
+      addCustom.addEventListener('click', () => {
          customCharity.push({name: customName.value, url: customUrl.value});
          localStorage.setItem('customCharity', JSON.stringify(customCharity));
+         customName.value = '';
+         customUrl.value = '';
          customMoadal.style.display = 'none';
       })
 
-      cancelCustom.addEventListener('reset', () => {
+      cancelCustom.addEventListener('click', () => {
+        customName.value = '';
+         customUrl.value = '';
         customMoadal.style.display = 'none';
       })
 
