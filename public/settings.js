@@ -30,9 +30,6 @@ if (localStorage.getItem('isSwapped') === null) {
     `
   
     function displaySwitch(){
-      console.log('Display switch function called');
-      
-    
   
     if (isSwapped) {
         colorChange.innerHTML = onHTML;
@@ -62,4 +59,8 @@ colorChange.addEventListener('click', () => {
     document.documentElement.style.setProperty('--mainWhite', 'white');
     localStorage.setItem('isSwapped', false);
   }
+
+  isSwapped = localStorage.getItem('isSwapped');
+  displaySwitch();
+  
 });
