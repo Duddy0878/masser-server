@@ -133,13 +133,13 @@ function changeCharity() {
       var addCustom = document.querySelector('.buttons button[type="submit"]');
       var cancelCustom = document.querySelector('.buttons button[type="reset"]');
 
-      addCustom.addEventListener('click', () => {
+      addCustom.addEventListener('submit', () => {
          customCharity.push({name: customName.value, url: customUrl.value});
          localStorage.setItem('customCharity', JSON.stringify(customCharity));
          customMoadal.style.display = 'none';
       })
 
-      cancelCustom.addEventListener('click', () => {
+      cancelCustom.addEventListener('reset', () => {
         customMoadal.style.display = 'none';
       })
 
