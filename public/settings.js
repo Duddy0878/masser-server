@@ -89,12 +89,12 @@ colorChange.addEventListener('click', () => {
 
 // ====== charedy options ======
 
-if (localStorage.getItem('charity') === null) {
-  localStorage.setItem('charity', "matbia");
+if (localStorage.getItem('myCharity') === null) {
+  localStorage.setItem('myCharity', "matbia");
 }
 
 function displayCharidy(){
-var myCharity = localStorage.getItem('charity');
+var myCharity = localStorage.getItem('myCharity');
 var goTo = document.querySelector('.goTo');
 
   if (charitySelect && myCharity) {
@@ -118,14 +118,37 @@ function changeCharity() {
   var charitySelect = document.getElementById('charitySelect');
 
   charitySelect.addEventListener('change', function() {
-    localStorage.setItem('charity', charitySelect.value);
-    displayCharidy();
+    if (charitySelect.value !== 'add') {
+    localStorage.setItem('myCharity', charitySelect.value);
+    displayCharidy();}
+    else {
+      var customMoadal = document.querySelector('.addCharityModal');
+      customMoadal.style.display = 'block';
+    }
   })
 
   
 }
 
 changeCharity();
+
+// custom charitys =====
+
+
+var openCustom = document.querySelector('.openCustomCharity');
+
+
+
+// if (localStorage.getItem('customCharity')){
+//   for (let i = 0; i < localStorage.getItem('customCharity').length; i++) {
+//     var customCharity = localStorage.getItem('customCharity')[i];
+
+
+
+// }
+// }
+
+
 
 
 

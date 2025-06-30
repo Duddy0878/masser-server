@@ -136,7 +136,7 @@ svg.x{
 }
 
 .settingsCon{
-   display: none;
+   display: block;
    background: var(--backroundBlue);
    position: absolute;
    top: 0;
@@ -194,5 +194,42 @@ svg.closeSettings{
 
 .closeSettings:hover {
   transform: scale(1.2);
+  transition: 0.3s;
+}
+
+.addCharityModal{
+  display: none;
+  position: absolute;
+  top: 85px;
+  right: 84px;
+  width: 200px;
+  background: var(--backroundBlue);
+  display: grid;
+  gap: 10px;
+  padding: 10px;
+}
+
+.addCharityModal input{
+  width: 150px;
+  background: transparent;
+  border: white 1px solid;
+  justify-self: center;
+}
+
+.addCharityModal::placeholder{
+    color: var(--mainWhite);
+}
+
+.addCharityModal button{
+  width: 90px;
+  height: 30px;
+  background: transparent;
+  border: var(--mainWhite) 1px solid;
+  border-radius: 10%;
+}
+
+.addCharityModal button:hover{
+  background: var(--mainWhite);
+  color: var(--backroundBlue);
   transition: 0.3s;
 }
