@@ -89,7 +89,7 @@ colorChange.addEventListener('click', () => {
 
 // ====== charedy options ======
 
-var customCharity = [];
+var customCharity = JSON.parse(localStorage.getItem('customCharity')) ;
 
 if (localStorage.getItem('myCharity') === null) {
   localStorage.setItem('myCharity', "matbia");
@@ -154,18 +154,6 @@ changeCharity();
 // custom charitys =====
 
 
-var openCustom = document.querySelector('.openCustomCharity');
-
-
-
-// if (localStorage.getItem('customCharity')){
-//   for (let i = 0; i < localStorage.getItem('customCharity').length; i++) {
-//     var customCharity = localStorage.getItem('customCharity')[i];
-
-
-
-// }
-// }
 
 
 
