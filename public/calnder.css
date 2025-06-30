@@ -71,6 +71,7 @@ svg.x{
 .today {
     font-weight: bold;
     color: rgb(41, 173, 190);
+    border-radius: 20%;
     background: white !important;
 }
 
