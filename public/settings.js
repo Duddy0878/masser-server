@@ -97,6 +97,10 @@ function displayCharidy(){
 var myCharity = localStorage.getItem('charity');
 var goTo = document.querySelector('.goTo');
 
+  if (charitySelect && myCharity) {
+    charitySelect.value = myCharity;
+  }
+
 if (myCharity === 'matbia') {
   goTo.href = 'https://matbia.org/dashboard';
   goTo.textContent = 'Go To Matbia';
