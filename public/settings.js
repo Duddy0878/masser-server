@@ -140,7 +140,7 @@ function changeCharity() {
       var cancelCustom = document.querySelector('.buttons button[type="reset"]');
 
       addCustom.addEventListener('click', () => {
-         customCharity = {name: customName.value, url: customUrl.value};
+        var customCharity = {name: customName.value, url: customUrl.value};
          
          localStorage.setItem('customCharity', JSON.stringify(customCharity));
 
