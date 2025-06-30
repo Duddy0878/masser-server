@@ -68,6 +68,11 @@ svg.x{
     padding-left: 16px;
     padding-right: 16px;
 }
+
+.calendar-table tr{
+  background-color: rgb(41, 173, 190);
+}
+
 .today {
     font-weight: bold;
     color: rgb(41, 173, 190);
