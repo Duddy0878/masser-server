@@ -71,8 +71,9 @@ svg.x{
 .today {
     font-weight: bold;
     color: rgb(41, 173, 190);
-    border-radius: 20%;
-    box-sizing: border-box;;
+    border-radius: 50%;
+    box-sizing: border-box;
+    border: rgb(41, 173, 190) 2px solid;
     background: white !important;
 }
 
