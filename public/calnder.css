@@ -70,7 +70,7 @@ svg.x{
 }
 .today {
     font-weight: bold;
-    color: white;
+    color: rgb(41, 173, 190);
     background: white !important;
 }
 
@@ -85,7 +85,7 @@ svg.x{
 .notPayed{
       border: 2px solid var(--backroundBlue);
     font-weight: bold;
-    color: var(--backroundBlue);
+    color: white;
     background: lightcoral !important;
     box-sizing: border-box;
 }
