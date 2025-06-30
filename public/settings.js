@@ -95,19 +95,17 @@ if (localStorage.getItem('charity') === null) {
 
 function displayCharidy(){
 var myCharity = localStorage.getItem('charity');
-var goTo = document.querySelector('.goTo');
+var goTo = document.querySelector('.goToCon');
 
   if (charitySelect && myCharity) {
     charitySelect.value = myCharity;
   }
 
 if (myCharity === 'matbia') {
-  goTo.href = 'https://matbia.org/dashboard';
-  goTo.textContent = 'Go To Matbia';
+ goTo.innerHTML = `<a href="https://matbia.org/dashboard" target="_blank">Go To Matbia</a>`;
 }
 else if (myCharity === 'ojc') {
-  goTo.href = 'https://ojcfund.org'
-  goTo.textContent = 'Go To OJC';
+ goTo.innerHTML = `<a href="https://ojcfund.org" target="_blank">Go To OJC</a>`;
 }
 
 }
@@ -120,8 +118,7 @@ function changeCharity() {
   charitySelect.addEventListener('change', function() {
     localStorage.setItem('charity', charitySelect.value);
   })
-
-  displayCharidy();
+displayCharidy();
 }
 
 changeCharity();
