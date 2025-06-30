@@ -31,15 +31,28 @@ if (localStorage.getItem('isSwapped') === null) {
   
     function displaySwitch(){
   
-    if (isSwapped === true) {
-        colorChange.innerHTML = onHTML;
-    } else {
+    if (!isSwapped) {
         colorChange.innerHTML = offHTML;
+    } else {
+        colorChange.innerHTML = onHTML;
     }
 
-  }
-  
-  displaySwitch();
+    }
+
+    function displayTheme(){
+      if (!isSwapped) {
+    
+        document.documentElement.style.setProperty('--backroundBlue', 'rgb(6, 5, 5)');
+        document.documentElement.style.setProperty('--mainWhite', 'rgb(41, 173, 190)');
+    
+      } else {
+        document.documentElement.style.setProperty('--backroundBlue', 'rgb(41, 173, 190)');
+        document.documentElement.style.setProperty('--mainWhite', 'white');
+
+       }
+    }
+    displayTheme();
+    displaySwitch();
 
 
 
@@ -49,7 +62,6 @@ colorChange.addEventListener('click', () => {
   console.log('hi');
   
   if (!isSwapped) {
-    console.log('hi');
     
     document.documentElement.style.setProperty('--backroundBlue', 'rgb(6, 5, 5)');
     document.documentElement.style.setProperty('--mainWhite', 'rgb(41, 173, 190)');
