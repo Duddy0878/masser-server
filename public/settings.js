@@ -89,6 +89,8 @@ colorChange.addEventListener('click', () => {
 
 // ====== charedy options ======
 
+customCharity = [];
+
 if (localStorage.getItem('myCharity') === null) {
   localStorage.setItem('myCharity', "matbia");
 }
@@ -124,6 +126,23 @@ function changeCharity() {
     else {
       var customMoadal = document.querySelector('.addCharityModal');
       customMoadal.style.display = 'grid';
+
+      var customName = document.querySelector('.customName');
+      var customUrl = document.querySelector('.customUrl');
+
+      var addCustom = document.querySelector('.buttons button[type="submit"]');
+      var cancelCustom = document.querySelector('.buttons button[type="reset"]');
+
+      addCustom.addEventListener('click', () => {
+         customCharity.push({name: customName.value, url: customUrl.value});
+         localStorage.setItem('customCharity', customCharity);
+      })
+
+      cancelCustom.addEventListener('click', () => {
+        customMoadal.style.display = 'none';
+      })
+
+
     }
   })
 
