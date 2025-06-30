@@ -123,7 +123,7 @@ function changeCharity() {
     displayCharidy();}
     else {
       var customMoadal = document.querySelector('.addCharityModal');
-      customMoadal.style.display = 'block';
+      customMoadal.style.display = 'grid';
     }
   })
 
