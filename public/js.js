@@ -520,7 +520,7 @@ loadMaaser()
     
     }
     renderYearCalendar().then(() => {
-        if(newPayCheck) {
+        if(newPayCheck > 0) {
             maaser.currentBalance += newPayCheck
             saveToStorage(maaser);
             window.location.reload();

@@ -1,5 +1,5 @@
 {
-  "currentBalance": 1637,
+  "currentBalance": 1748,
   "donations": [
     {
       "donationId": "afd49ea8-ff8e-4dfc-833b-359c02b12b1d",
@@ -279,6 +279,20 @@
       "date": "07/02/25",
       "type": "++",
       "amount": "10",
+      "payedTo": "Other"
+    },
+    {
+      "donationId": "6f628cad-0fd7-4fb7-8f95-713d548c6d47",
+      "date": "07/03/25",
+      "type": "++",
+      "amount": 110,
+      "payedTo": "2025-06-27/MZ-WORK"
+    },
+    {
+      "donationId": "18754e4d-d826-4bef-b24d-275ca993b712",
+      "date": "07/07/25",
+      "type": "++",
+      "amount": "1",
       "payedTo": "Other"
     }
   ]
