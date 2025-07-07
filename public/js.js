@@ -295,10 +295,6 @@ loadMaaser()
     
     
     
-    
-    console.log(weekPay);
-    
-    
     // calnder
     
     // Simple static parsha table for 2025 (Gregorian date string: Parsha name in Hebrew)
@@ -344,8 +340,10 @@ loadMaaser()
         "2025-09-27": "נצבים",
         // Add more as needed
     };
+
+    var newPayCheck = 0;
     
-    function renderYearCalendar() {
+ async function renderYearCalendar() {
         const calendarDiv = document.querySelector('.calnder');
         calendarDiv.innerHTML = '<svg class="x" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg> <div class="auto">Auto Update PayChecks </div>'; // Clear previous content
     
@@ -387,10 +385,11 @@ loadMaaser()
     
             const daysInMonth = dayjs(`${year}-${month + 1}-01`).daysInMonth();
             const firstDay = dayjs(`${year}-${month + 1}-01`).day();
+            
     
             let day = 1;
                 
-            for (let week = 0; week < 6 && day <= daysInMonth; week++) {
+     for (let week = 0; week < 6 && day <= daysInMonth; week++) {
                 const tr = document.createElement('tr');
                 // Collect all dates for this week
                 let weekDates = [];
@@ -399,7 +398,7 @@ loadMaaser()
                     const thisDate = `${year}-${String(month + 1).padStart(2, '0')}-${String(tempDay).padStart(2, '0')}`;
                 
                    weekDates.push(thisDate);
-                 
+                   
             tempDay++;
             }
         
@@ -415,7 +414,8 @@ loadMaaser()
                 td.innerHTML = '';
             } else if (day > daysInMonth) {
                 td.innerHTML = '';
-            } else {
+            }
+             else {
                 let cellContent = day;
                 if (d === 6) {
                     const shabbatDate = `${year}-${String(month + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
@@ -434,6 +434,24 @@ loadMaaser()
                 }
                 else if(d=== 5 && !highlightFriday) {
                     td.classList.add('notPayed');
+                    var todayInLoop = dayjs(`${year}-${String(month + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`);
+                    
+                    
+                     var actuleDay = dayjs();
+
+                    if(localStorage.getItem('autoPay') === 'true' &&  todayInLoop.isBefore(actuleDay)){
+                    var myPay = localStorage.getItem('myPay')*10/100;
+
+                        maaser.donations.push(
+                            {
+                            donationId: crypto.randomUUID(),
+                            date: today.format('MM/DD/YY'),
+                            type: '++',
+                            amount: myPay,
+                            payedTo: `${year}-${String(month + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}/MZ-WORK`
+                        })
+                        newPayCheck += myPay; 
+                    }
                 }
                 day++;
             }
@@ -445,7 +463,10 @@ loadMaaser()
     
             monthContainer.appendChild(table);
             calendarDiv.appendChild(monthContainer);
+            
         }
+
+       
     
     
     var nowMonth = dayjs().month();
@@ -498,7 +519,13 @@ loadMaaser()
          console.log(document.querySelector('.calnder'));
     
     }
-    renderYearCalendar();
+    renderYearCalendar().then(() => {
+        if(newPayCheck) {
+            maaser.currentBalance += newPayCheck
+            saveToStorage(maaser);
+            window.location.reload();
+        }
+    })
     
     
     

@@ -1,9 +1,11 @@
+process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
 const express = require('express');
 const cors = require('cors');
 const { Storage } = require('@google-cloud/storage');
 const app = express();
 const path = require('path');
 
+// ...existing code...
 app.use(cors());
 app.use(express.json());
 app.use(express.static('public'));
@@ -12,15 +14,15 @@ const bucketName = 'maasser_1';
 const fileName = 'data.json';
 
 // Initialize Google Cloud Storage
-
-
 let storage;
 if (process.env.GOOGLE_APPLICATION_CREDENTIALS_JSON) {
   const credentials = JSON.parse(process.env.GOOGLE_APPLICATION_CREDENTIALS_JSON);
   storage = new Storage({ credentials });
 } else {
-  storage = new Storage();
+  const credentials = require('./key.json');
+  storage = new Storage({ credentials });
 }
+// ...rest of your code...
 
 // Helper to download data.json from GCS
 async function getDataJson() {

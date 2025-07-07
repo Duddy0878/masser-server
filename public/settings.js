@@ -1,3 +1,4 @@
+import dayjs from 'https://unpkg.com/dayjs@1.11.10/esm/index.js';
 
 if (localStorage.getItem('isSwapped') === null) {
   localStorage.setItem('isSwapped', false);
@@ -171,11 +172,60 @@ function changeCharity() {
 
 changeCharity();
 
-// custom charitys =====
+// ========= auto pay chek =============
+if (!localStorage.getItem('autoPay')) {
+  localStorage.setItem('autoPay', false);
+}
+if (!localStorage.getItem('myPay')) {
+localStorage.setItem('myPay', 0);
+}
+
+function paySwitches() {
+ var onOff = localStorage.getItem('autoPay');
+ var switchHtml = document.querySelector('.paySwitchs');
+
+ if(onOff === 'true') {
+    switchHtml.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFFFF"><path d="M280-240q-100 0-170-70T40-480q0-100 70-170t170-70h400q100 0 170 70t70 170q0 100-70 170t-170 70H280Zm0-80h400q66 0 113-47t47-113q0-66-47-113t-113-47H280q-66 0-113 47t-47 113q0 66 47 113t113 47Zm400-40q50 0 85-35t35-85q0-50-35-85t-85-35q-50 0-85 35t-35 85q0 50 35 85t85 35ZM480-480Z"/></svg>`;
+}
+else {
+  switchHtml.innerHTML = `<svg class="paySwitch" xmlns="http://www.w3.org/2000/svg" height="29px" viewBox="0 -960 960 960" width="29px"><path d="M280-240q-100 0-170-70T40-480q0-100 70-170t170-70h400q100 0 170 70t70 170q0 100-70 170t-170 70H280Zm0-80h400q66 0 113-47t47-113q0-66-47-113t-113-47H280q-66 0-113 47t-47 113q0 66 47 113t113 47Zm0-40q50 0 85-35t35-85q0-50-35-85t-85-35q-50 0-85 35t-35 85q0 50 35 85t85 35Zm200-120Z"/></svg>`;
+}
+}
+
+paySwitches();
 
 
+function autoPayCheck(){
+  var switchAutoPayOn = document.querySelector('.paySwitchs');
+  
+
+  switchAutoPayOn.addEventListener('click', () => {
+    
+   if(localStorage.getItem('autoPay') === 'false'){
+    localStorage.setItem('autoPay', true);}
+   else {
+    localStorage.setItem('autoPay', false);
+  }
+    paySwitches();
+  })
+}
+
+autoPayCheck();
 
 
+// update
+
+var openUpdate = document.querySelector('.update');
+var updateModal = document.querySelector('.updateModal');
+var closeUpdate = document.querySelector('.cancelUpdate');
+
+openUpdate.addEventListener('click', () => {
+  updateModal.style.display = 'block';
+})
+
+closeUpdate.addEventListener('click', () => {
+  updateModal.style.display = 'none';
+})
 
 
 

@@ -1,5 +1,5 @@
 {
-  "currentBalance": 2017,
+  "currentBalance": 1637,
   "donations": [
     {
       "donationId": "afd49ea8-ff8e-4dfc-833b-359c02b12b1d",
@@ -21,6 +21,69 @@
       "type": "++",
       "amount": "240",
       "payedTo": "/2 after wedding"
+    },
+    {
+      "donationId": "6212473f-69bd-4c64-b7bd-f5e3cbf18557",
+      "date": "07/03/25",
+      "type": "++",
+      "amount": 0,
+      "payedTo": "2025-01-03/MZ-WORK"
+    },
+    {
+      "donationId": "85e1119c-83d6-4d01-84c3-b243828315b5",
+      "date": "07/03/25",
+      "type": "++",
+      "amount": 0,
+      "payedTo": "2025-01-10/MZ-WORK"
+    },
+    {
+      "donationId": "7a65aff7-67a9-400a-8591-e69eecddc4f5",
+      "date": "07/03/25",
+      "type": "++",
+      "amount": 0,
+      "payedTo": "2025-01-17/MZ-WORK"
+    },
+    {
+      "donationId": "f34209b0-3972-42d5-abed-5e2c70d8daa4",
+      "date": "07/03/25",
+      "type": "++",
+      "amount": 0,
+      "payedTo": "2025-01-24/MZ-WORK"
+    },
+    {
+      "donationId": "2c8004b3-40ec-4455-a907-9df8ef656324",
+      "date": "07/03/25",
+      "type": "++",
+      "amount": 0,
+      "payedTo": "2025-01-31/MZ-WORK"
+    },
+    {
+      "donationId": "c2e2e395-8bf0-491c-9d1f-a03f785edbc6",
+      "date": "07/03/25",
+      "type": "++",
+      "amount": 0,
+      "payedTo": "2025-02-07/MZ-WORK"
+    },
+    {
+      "donationId": "6d527183-1667-49d2-a39b-c38d7e9d9410",
+      "date": "07/03/25",
+      "type": "++",
+      "amount": 0,
+      "payedTo": "2025-02-14/MZ-WORK"
+    },
+    {
+      "donationId": "33c25d47-f44c-4bcb-8511-144728bcd186",
+      "date": "07/03/25",
+      "type": "++",
+      "amount": 0,
+      "payedTo": "2025-02-21/MZ-WORK"
+    },
+    {
+      "donationId": "82e0dd46-3ee2-4a8c-af89-6c81d890ab06",
+      "date": "07/03/25",
+      "type": "++",
+      "amount": 0,
+      "payedTo": "2025-02-28/MZ-WORK"
     },
     {
       "donationId": "51cd2694-462d-417c-9390-c64b76f4414d",
@@ -196,6 +259,27 @@
       "type": "++",
       "amount": "110",
       "payedTo": "2025-06-13/MZ-WORK"
+    },
+    {
+      "donationId": "4855f3f3-051d-4ada-b257-8d2a1546dd7f",
+      "date": "06/26/25",
+      "type": "++",
+      "amount": "110",
+      "payedTo": "2025-06-20/MZ-WORK"
+    },
+    {
+      "donationId": "7837b01f-25be-4251-bfb9-07f30fdf2ba6",
+      "date": "07/02/25",
+      "type": "--",
+      "amount": 500,
+      "payedTo": "Matbie"
+    },
+    {
+      "donationId": "be7e7736-29fb-4dce-a84e-7019a6d4dc7e",
+      "date": "07/02/25",
+      "type": "++",
+      "amount": "10",
+      "payedTo": "Other"
     }
   ]
 }

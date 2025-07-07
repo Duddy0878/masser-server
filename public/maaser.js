@@ -46,7 +46,7 @@ export function saveToStorage(newMasserPost) {
   const MasserPost = new XMLHttpRequest();
 
   MasserPost.onload = () => {
-   if (requestPost.status === 200) {
+   if (MasserPost.status === 200) {
        console.log('Password successfully added and saved to the server.');
    } else {
        console.error('Failed to save the password:', MasserPost.statusText);
