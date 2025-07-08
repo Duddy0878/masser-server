@@ -4,18 +4,24 @@ import { loadMaaser, maaser, saveToStorage } from './maaser.js';
 if (localStorage.getItem('isSwapped') === null) {
   localStorage.setItem('isSwapped', false);
 }
-    
+
+
     var settingsBtn = document.querySelector('.settings');
     var settingsModal = document.querySelector('.settingsCon');
     var closeSettings = document.querySelector('.closeSettings');
 
-    settingsBtn.addEventListener('click', () => {
+   settingsBtn.addEventListener('click', () => {
         settingsModal.style.display = 'block';
     })
 
     closeSettings.addEventListener('click', () => {
         settingsModal.style.display = 'none';
     })
+
+
+
+    
+ 
 
       // ===== settings theme ==============
     var isSwapped = false;

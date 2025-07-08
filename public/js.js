@@ -521,19 +521,36 @@ loadMaaser()
         backMonth();
     })
     })
+
+  
     
     var autoBtn = document.querySelector('.auto');
-    
     autoBtn.addEventListener('click', () => {
-      alert('not implemented yet');
-    })
+    
+     if(localStorage.getItem('autoPay') === 'true'){
+       alert('Auto pay is already Enabled');
+     }
+     else{
+        var settingsModal = document.querySelector('.settingsCon');
+        settingsModal.style.display = 'block';
+        
+     }
+   })
+
+  
+
+    
+    
+    
+    
+    
+    
     
         var closePayCheck = document.querySelector('.x');
     
             closePayCheck.addEventListener('click', () => {   
             payCheckModal.style.display = 'none';
             renderYearCalendar();
-        
          })
          console.log(document.querySelector('.calnder'));
     

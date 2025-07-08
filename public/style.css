@@ -383,6 +383,10 @@ tr:nth-child(even){
     width: 90%;
     }
 
+    #historyContainer{
+        width: 100%;
+    }
+
     th{
     font-size: 10px;
     }
