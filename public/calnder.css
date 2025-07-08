@@ -118,6 +118,7 @@ svg.x{
    }
 
   .calendar-table {
+    margin: 0px;
     width: 120px;
     height: 230px;
   } 
@@ -126,8 +127,8 @@ svg.x{
     width: 8px;
     height: 8px;
     font-size: 10px;
-    padding-left: 6px;
-    padding-right: 6px;
+    padding-left: 9px;
+    padding-right: 9px;
   } 
 
   .left-arrow, .right-arrow {
@@ -179,6 +180,11 @@ li select{
 li option{
   background: var(--mainWhite);
   color: var(--backroundBlue);
+}
+
+.parshah{
+  font-size:11px;
+  color: white;
 }
 
 .closeSettings{
@@ -377,6 +383,10 @@ svg.trash{
   width: 80px;
   height: 15px;
   font-size: 10px;
+}
+
+.parshah{
+  font-size:7px;
 }
 
 .addCharityModal{

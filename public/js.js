@@ -436,7 +436,7 @@ loadMaaser()
                 if (d === 6) {
                     const shabbatDate = `${year}-${String(month + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
                     if (parshaTable[shabbatDate]) {
-                        cellContent += `<div style="font-size:11px;color: white;">${parshaTable[shabbatDate]}</div>`;
+                        cellContent += `<div class="parshah">${parshaTable[shabbatDate]}</div>`;
                     }
                 }
                 td.innerHTML = cellContent;
