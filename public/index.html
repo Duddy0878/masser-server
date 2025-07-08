@@ -31,6 +31,10 @@
             <path d="M280 740l278 76 238-74q-5-9-14.5-15.5T760 720H558q-27 0-43-2t-33-8l-93-31 22-78 81 27q17 5 40 8t68 4q0-11-6.5-21T578 606l-234-86h-64v220ZM40 880V440h304q7 0 14 1.5t13 3.5l235 87q33 12 53.5 42t20.5 66h80q50 0 85 33t35 87v40L560 860l-280-78v58H40Zm80-80h80V520h-80v280Z"/>
             </svg>
          </div>
+
+         <div class="refresh">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f"><path d="M480-160q-134 0-227-93t-93-227q0-134 93-227t227-93q69 0 132 28.5T720-690v-110h80v280H520v-80h168q-32-56-87.5-88T480-720q-100 0-170 70t-70 170q0 100 70 170t170 70q77 0 139-44t87-116h84q-28 106-114 173t-196 67Z"/></svg>
+         </div>
         
         
    
@@ -82,8 +86,8 @@
                         <option value="add">Add Another</option>
                     </select>
                 </li>
-                <li>Auto update paychek    <div class="paySwitchs"> <svg class="paySwitch" xmlns="http://www.w3.org/2000/svg" height="29px" viewBox="0 -960 960 960" width="29px"><path d="M280-240q-100 0-170-70T40-480q0-100 70-170t170-70h400q100 0 170 70t70 170q0 100-70 170t-170 70H280Zm0-80h400q66 0 113-47t47-113q0-66-47-113t-113-47H280q-66 0-113 47t-47 113q0 66 47 113t113 47Zm0-40q50 0 85-35t35-85q0-50-35-85t-85-35q-50 0-85 35t-35 85q0 50 35 85t85 35Zm200-120Z"/></svg></div></li>
-                <li><span class="weekIncome">weekly income $1000</span> <div class="update">Update</div></li>
+                <li>Auto update paychek    <div class="paySwitchs"> </div></li>
+                <li><span class="weekIncome"></span> <div class="update">Update</div></li>
                 <li>try</li>
             </ul>
             <p>for Support and Feedback Contact <a href="mailto:mymaaser.my@gmail.com">MyMaaser.My@gmail.com</a></p>
@@ -91,17 +95,11 @@
             <div class="updateModal">
                 <div class="updateCon">
                     <div class="currenPay">
-                        <div class="eachBox">
-                        <label for=""> MZ Work $1100 </label>
-                            <input type="number" class="" placeholder="Enter Updated Amount">
-                        </div>
-                        <div class="eachBox">
-                            <label for=""> MZ Work $1100 </label>
-                            <input type="number" class="" placeholder="Enter Updated Amount">
-                        </div>
+                      
                     </div>
                     <button type="reset" class="cancelUpdate">Cancel</button>
                     <button type="submit" class="submitUpdate">Update</button>
+                    
                 </div>
             </div>
 
@@ -141,15 +139,18 @@
 
             <div>
                 <div class="dateDisplay">
-
                     <label>Income week</label>
                     <input class="weekInput" type="date">
+                </div>
+                <div class="typeDisplay">
+                    <label>Income Type</label>
+                    <input class="week3Input" type="text">
                 </div>
          
                 <select name="" class="week2Input"  >
                   <option value="" disabled selected>Choose Type Of Income</option>
-                 <option value="MZ-WORK">MZ WORK</option>
-                 <option value="Kollel">KOLEL</option>
+                 <option value="payCheck">Pay Check</option>
+                 <option value="typeIn">Type In</option>
                  <option value="Other">OTHER</option>
                 </select>
 
@@ -221,7 +222,8 @@
     </div>
    
     
-        
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.8.2/jspdf.plugin.autotable.min.js"></script>
 

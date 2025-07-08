@@ -17,6 +17,15 @@ loadMaaser()
         modalAdd.style.display = 'block'
         
     })
+
+    function closeAddFunction(){
+         modalAdd.style.display = 'none';
+        addMore.value = '';
+         addEarned.value = '';
+         displayType.style.display = 'none';
+         typeDisplay.style.display = 'none';
+         week2Input.value = '';
+    }
     
     
     function displayBalance (){
@@ -31,6 +40,7 @@ loadMaaser()
     var addEarned = document.querySelector('.earnedInput');
     var weekInput = document.querySelector('.weekInput');
     var week2Input = document.querySelector('.week2Input');
+    var week3Input = document.querySelector('.week3Input');
     
     
     addEarned.addEventListener('keyup', (e) => {
@@ -44,17 +54,21 @@ loadMaaser()
      })
     
     var displayType = document.querySelector('.dateDisplay');
-    
+    var typeDisplay = document.querySelector('.typeDisplay');
     week2Input.addEventListener('change', (e) => {
-        if (week2Input.value === 'MZ-WORK' 
-            || week2Input.value === 'Kollel'
+        if (week2Input.value === 'payCheck' 
         ) {
             displayType.style.display = 'inline-block';
-            
+            typeDisplay.style.display = 'none';
         }
+        else if (week2Input.value === 'typeIn'){
+            typeDisplay.style.display = 'inline-block';
+            displayType.style.display = 'none';
+        } 
     })
     
     form.addEventListener('submit', (e) => {
+        e.preventDefault();
         var addMoreValue = addMore.value
         
     
@@ -63,10 +77,12 @@ loadMaaser()
         const newMaaser = maaser.currentBalance + addMOreToNum;
         maaser.currentBalance = newMaaser;
         var payedToo
-        if (week2Input.value === 'MZ-WORK' 
-            || week2Input.value === 'Kollel'
+        if (week2Input.value === 'payCheck' 
         ){
            payedToo = weekInput.value + "/" + week2Input.value
+        }
+        else if (week2Input.value === 'typeIn') {
+            payedToo = week3Input.value;
         }
         else {
             payedToo = week2Input.value;
@@ -85,16 +101,13 @@ loadMaaser()
     
     
         saveToStorage(maaser);
+        closeAddFunction();
         displayBalance();
-    
+        
     })
     
     closeAdd.addEventListener('click', ()=> {
-        modalAdd.style.display = 'none';
-        addMore.value = '';
-         addEarned.value = '';
-         displayType.style.display = 'none';
-         week2Input.value = '';
+        closeAddFunction();
     })
     
     // pay off maaser ===============================
@@ -112,7 +125,7 @@ loadMaaser()
     var payoffForm = document.querySelector('.payedForm')
     
     payoffForm.addEventListener('submit', (e) => {
-    
+        e.preventDefault();
         // counculate Balance
         var amountOff = amount.value
         var payedTo = donationTo.value
@@ -127,12 +140,15 @@ loadMaaser()
                 donationId: crypto.randomUUID(),
                 date: today.format('MM/DD/YY'),
                 type: '--',
-                amount: Number(amountOff),
+                amount: amountOff,
                 payedTo: payedTo 
             }
         )
     
         saveToStorage(maaser);
+        modalPayMasser.style.display = 'none';
+        amount.value = '';
+         donationTo.value = '';
         displayBalance();
         
     })
@@ -285,7 +301,7 @@ loadMaaser()
     for (let i = 0; i < maaser.donations.length; i++) {
         const payedTo = maaser.donations[i].payedTo;
         // Only push if there is a date before the slash
-        if ( payedTo.toUpperCase().includes('MZ-WORK') && payedTo.includes('/')) {
+        if ( (payedTo.includes('payCheck') || payedTo.includes('AutoPayCheck')) && payedTo.includes('/')) {
             const datePart = payedTo.split('/')[0];
             if (datePart && datePart.trim() !== "") {
                 weekPay.push(datePart);
@@ -440,17 +456,20 @@ loadMaaser()
                      var actuleDay = dayjs();
 
                     if(localStorage.getItem('autoPay') === 'true' &&  todayInLoop.isBefore(actuleDay)){
-                    var myPay = localStorage.getItem('myPay')*10/100;
-
+                    var incomes = JSON.parse(localStorage.getItem('incomes'));
+                    var myPay = incomes.myPay;
+                    var myPayPrecent = Math.ceil(Number(myPay) * 0.10);
+                    console.log(myPayPrecent);
+                    
                         maaser.donations.push(
                             {
                             donationId: crypto.randomUUID(),
                             date: today.format('MM/DD/YY'),
                             type: '++',
-                            amount: myPay,
-                            payedTo: `${year}-${String(month + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}/MZ-WORK`
+                            amount: myPayPrecent,
+                            payedTo: `${year}-${String(month + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}/AutoPayCheck`
                         })
-                        newPayCheck += myPay; 
+                        newPayCheck += myPayPrecent; 
                     }
                 }
                 day++;

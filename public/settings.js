@@ -1,4 +1,5 @@
 import dayjs from 'https://unpkg.com/dayjs@1.11.10/esm/index.js';
+import { loadMaaser, maaser, saveToStorage } from './maaser.js';
 
 if (localStorage.getItem('isSwapped') === null) {
   localStorage.setItem('isSwapped', false);
@@ -173,11 +174,21 @@ function changeCharity() {
 changeCharity();
 
 // ========= auto pay chek =============
+var incomes
+function getIncomes() {
+ incomes = JSON.parse(localStorage.getItem('incomes'));
+}
+getIncomes();
+
 if (!localStorage.getItem('autoPay')) {
   localStorage.setItem('autoPay', false);
 }
-if (!localStorage.getItem('myPay')) {
-localStorage.setItem('myPay', 0);
+if (!localStorage.getItem('incomes')) {
+  var incomes = {
+    myPay: 0,
+    typesOfPay: [
+    ]}
+localStorage.setItem('incomes', JSON.stringify(incomes));
 }
 
 function paySwitches() {
@@ -185,15 +196,14 @@ function paySwitches() {
  var switchHtml = document.querySelector('.paySwitchs');
 
  if(onOff === 'true') {
-    switchHtml.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFFFF"><path d="M280-240q-100 0-170-70T40-480q0-100 70-170t170-70h400q100 0 170 70t70 170q0 100-70 170t-170 70H280Zm0-80h400q66 0 113-47t47-113q0-66-47-113t-113-47H280q-66 0-113 47t-47 113q0 66 47 113t113 47Zm400-40q50 0 85-35t35-85q0-50-35-85t-85-35q-50 0-85 35t-35 85q0 50 35 85t85 35ZM480-480Z"/></svg>`;
+    switchHtml.innerHTML = `<svg class="paySwitch" xmlns="http://www.w3.org/2000/svg" height="29px" viewBox="0 -960 960 960" width="29px" ><path d="M280-240q-100 0-170-70T40-480q0-100 70-170t170-70h400q100 0 170 70t70 170q0 100-70 170t-170 70H280Zm0-80h400q66 0 113-47t47-113q0-66-47-113t-113-47H280q-66 0-113 47t-47 113q0 66 47 113t113 47Zm400-40q50 0 85-35t35-85q0-50-35-85t-85-35q-50 0-85 35t-35 85q0 50 35 85t85 35ZM480-480Z"/></svg>`;
 }
 else {
-  switchHtml.innerHTML = `<svg class="paySwitch" xmlns="http://www.w3.org/2000/svg" height="29px" viewBox="0 -960 960 960" width="29px"><path d="M280-240q-100 0-170-70T40-480q0-100 70-170t170-70h400q100 0 170 70t70 170q0 100-70 170t-170 70H280Zm0-80h400q66 0 113-47t47-113q0-66-47-113t-113-47H280q-66 0-113 47t-47 113q0 66 47 113t113 47Zm0-40q50 0 85-35t35-85q0-50-35-85t-85-35q-50 0-85 35t-35 85q0 50 35 85t85 35Zm200-120Z"/></svg>`;
+  switchHtml.innerHTML = `<svg class="paySwitch" xmlns="http://www.w3.org/2000/svg" height="29px"  viewBox="0 -960 960 960" width="29px"><path d="M280-240q-100 0-170-70T40-480q0-100 70-170t170-70h400q100 0 170 70t70 170q0 100-70 170t-170 70H280Zm0-80h400q66 0 113-47t47-113q0-66-47-113t-113-47H280q-66 0-113 47t-47 113q0 66 47 113t113 47Zm0-40q50 0 85-35t35-85q0-50-35-85t-85-35q-50 0-85 35t-35 85q0 50 35 85t85 35Zm200-120Z"/></svg>`;
 }
 }
 
 paySwitches();
-
 
 function autoPayCheck(){
   var switchAutoPayOn = document.querySelector('.paySwitchs');
@@ -202,7 +212,23 @@ function autoPayCheck(){
   switchAutoPayOn.addEventListener('click', () => {
     
    if(localStorage.getItem('autoPay') === 'false'){
-    localStorage.setItem('autoPay', true);}
+    if(incomes.myPay === 0) {
+     swal.fire({
+      title: 'Error',
+      text: 'You Need To Set An Income Before Turning on Auto Pay.',
+      color: 'var(--mainWhite)',
+      icon: 'error',
+      width: '300px',
+      iconColor: 'red',
+      background: 'var(--backroundBlue)',
+      showConfirmButton: false,
+      timer: 6000,  
+     })     
+    }
+    else {
+      localStorage.setItem('autoPay', true);
+    }
+   }
    else {
     localStorage.setItem('autoPay', false);
   }
@@ -212,8 +238,19 @@ function autoPayCheck(){
 
 autoPayCheck();
 
+function incomeDisplay() {
+ var incomeAmount = incomes.myPay;
+ var toDisplay = document.querySelector('.weekIncome');
+
+ toDisplay.textContent = `Your Income Is: $${incomeAmount}`;
+}
+
+incomeDisplay();
+
 
 // update
+
+
 
 var openUpdate = document.querySelector('.update');
 var updateModal = document.querySelector('.updateModal');
@@ -223,11 +260,140 @@ openUpdate.addEventListener('click', () => {
   updateModal.style.display = 'block';
 })
 
-closeUpdate.addEventListener('click', () => {
-  updateModal.style.display = 'none';
+var count = 1;
+
+function displayTypesOfPay() {
+  var incomesHTML =`<div class="eachBox newIncome">
+                        New Income <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"><path d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z"/></svg>
+                    </div>`;
+  var typesOf = incomes.typesOfPay
+
+  for(let i = 0; i < typesOf.length; i++) {
+     incomesHTML += ` 
+      <div class="eachBox ${typesOf[i].name}" data-name-id="${typesOf[i].name}" >
+        <svg class="trash" xmlns="http://www.w3.org/2000/svg" height="34px" viewBox="0 -960 960 960" width="34px"><path d="M280-120q-33 0-56.5-23.5T200-200v-520h-40v-80h200v-40h240v40h200v80h-40v520q0 33-23.5 56.5T680-120H280Zm400-600H280v520h400v-520ZM360-280h80v-360h-80v360Zm160 0h80v-360h-80v360ZM280-720v520-520Z"/></svg>
+        
+        <label for="">${typesOf[i].name} $${typesOf[i].amount}</label>
+            <input type="number" class="" placeholder="Enter Updated Amount">
+            <div class="eachUpdate">update</div>
+      </div>`
+    
+  }
+
+  document.querySelector('.currenPay').innerHTML = incomesHTML;
+  
+    var eachUpdate = document.querySelectorAll('.eachUpdate');
+    
+    eachUpdate.forEach((update) => {
+      update.addEventListener('click', (e) => {
+        var nameId = e.target.parentElement.dataset.nameId;
+      if(count === 1) {
+        document.querySelector(`.${nameId} input`).style.display = 'block';
+        document.querySelector(`.${nameId} .eachUpdate`).style.display = 'none';
+        count++;
+      }
+      else{
+        displayTypesOfPay();
+        document.querySelector(`.${nameId} input`).style.display = 'block';
+        document.querySelector(`.${nameId} .eachUpdate`).style.display = 'none';
+        count++;
+      }
+      localStorage.setItem('updateName', nameId);
+      
+        
+      })
+    })
+}
+displayTypesOfPay();
+
+function addNewIncomeChoice() {
+  var newIncomeChoice = document.querySelector('.newIncome');
+  var addChoice = document.querySelector('.newIncome svg');
+  addChoice.addEventListener('click', () => {
+    var newIncomeName = prompt('Enter The Name Of The Income:');
+    if (newIncomeName) {
+      var newIncomeAmount = prompt('Enter The Amount Of The Income:');
+      if (newIncomeAmount) {
+        incomes.typesOfPay.push({name: newIncomeName, amount: Number(newIncomeAmount)});
+        localStorage.setItem('incomes', JSON.stringify(incomes));
+        countPay();
+        displayTypesOfPay();
+        incomeDisplay();
+      } else {
+        alert('Please enter a valid amount.');
+      }
+    } else {
+      alert('Please enter a valid name.');
+    }
+  })
+}
+addNewIncomeChoice();
+
+// update pay
+function countPay() {
+getIncomes();
+var countPay = 0;
+for (let i = 0; i < incomes.typesOfPay.length; i++) {
+  countPay += incomes.typesOfPay[i].amount;
+  console.log(countPay);
+  
+}
+incomes.myPay = countPay;
+localStorage.setItem('incomes', JSON.stringify(incomes));
+}
+
+countPay();
+
+var updatePay = document.querySelector('.submitUpdate');
+
+updatePay.addEventListener('click', () => {
+    var updateName = localStorage.getItem('updateName');
+    var newPay = document.querySelector(`.${updateName} input`);
+    incomes.typesOfPay.forEach((type) => {
+      if(type.name === updateName) {
+        type.amount = Number(newPay.value);
+      }
+    })
+    localStorage.setItem('incomes', JSON.stringify(incomes));
+    updateModal.style.display = 'none';
+    countPay();
+    incomeDisplay();
+    displayTypesOfPay();
 })
 
+closeUpdate.addEventListener('click', () => {
+  updateModal.style.display = 'none';
+  displayTypesOfPay();
+})
 
+function refresh() {
+  loadMaaser().then(() => {
+    
+
+
+
+  var jsonMaaser = maaser;
+  var countNow = 0;
+  for (let i = 0; jsonMaaser.donations.length > i; i++) {
+    if (jsonMaaser.donations[i].type === '++') {
+    countNow += Number(maaser.donations[i].amount);
+    }
+    else{
+      countNow -= Number(maaser.donations[i].amount);
+    }
+  }
+  
+  maaser.currentBalance = countNow;
+  saveToStorage(maaser);
+})
+}
+
+
+var refreshNow = document.querySelector('.refresh');
+refreshNow.addEventListener('click', () => {
+  refresh();
+  window.location.reload();
+})
 
 
 

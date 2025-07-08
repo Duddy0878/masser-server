@@ -237,6 +237,11 @@ svg.closeSettings{
   text-align: start;
 }
 
+.paySwitchs{
+      display: flex;
+    align-items: start;
+}
+
 svg.paySwitch{
   fill: var(--mainWhite);
 }
@@ -304,16 +309,51 @@ svg.paySwitch{
 }
 
 .eachBox label{
+  display: inline;
   font-size: 17px;
 }
 
 .eachBox input{
+ display: none;
  background: transparent;
-  border: 1px solid var(--mainWhite);
+ border: 1px solid var(--mainWhite);
+}
+
+.eachUpdate{
+  border: solid 1px var(--mainWhite);
+  border-radius: 10%;
+}
+
+.eachUpdate:hover{
+  cursor: pointer;
+  transform: scale(1.05);
+  background: rgba(0, 0, 0, 0.3);
+}
+
+svg.trash{
+  position: absolute;
+  fill: var(--mainWhite);
+  cursor: pointer;
+  left: -40px;
+  opacity: 0.5;
 }
 
 .eachBox input::placeholder{
   color: var(--mainWhite);
+}
+
+.eachBox input:focus{
+  outline: none;
+  border: 1px solid var(--mainWhite);
+}
+
+.selected{
+  border: 3px solid var(--mainWhite);
+}
+
+.newIncome svg{
+  fill: var(--mainWhite);
+  cursor: pointer;
 }
 
 @media(max-width: 500px) {

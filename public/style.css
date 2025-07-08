@@ -45,9 +45,20 @@ h1{
     cursor: pointer;
 }
 
-.settings:hover, .payCheck:hover{
+.settings:hover, .payCheck:hover, .refresh:hover{
       transform: scale(1.1);
     }
+
+.refresh{
+    position: absolute;
+    right: 100px;
+    top: 23px;
+    cursor: pointer;
+}
+
+.refresh svg{
+    fill: var(--mainWhite);
+}
 h3{
     padding: 10px;
 }
@@ -103,6 +114,11 @@ a:hover{
 }
 
 .dateDisplay{
+    padding: 0px !important;
+    display: none;
+}
+
+.typeDisplay{
     padding: 0px !important;
     display: none;
 }
