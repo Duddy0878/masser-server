@@ -357,6 +357,11 @@ svg.trash{
 }
 
 @media(max-width: 500px) {
+
+  .settingsCon{
+    border: 3px solid var(--mainWhite);
+  }
+
   .settingsCon ul{
      padding-left: 5%;
      font-size: 15px;
@@ -364,11 +369,12 @@ svg.trash{
 
   .settingsCon ul li{
     padding: 3px;
+    grid-template-columns: 2fr 1fr;
   }
 
 
   li select{
-  width: 100px;
+  width: 80px;
   height: 15px;
   font-size: 10px;
 }
