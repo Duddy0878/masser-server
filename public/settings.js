@@ -398,5 +398,12 @@ refreshNow.addEventListener('click', () => {
   window.location.reload();
 })
 
+    var signOutNow = document.querySelector('.sU');
+    signOutNow.addEventListener('click', () => {
+      localStorage.clear();
+      window.location.reload();
+    })
+    
+
 });
 

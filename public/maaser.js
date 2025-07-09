@@ -14,7 +14,7 @@ export let maaser = {
       "donations": []
 };
 
-let allAcounts = [];
+export let allAcounts = [];
 
 export function loadMaaser() {
   return new Promise((resolve, reject) => {
@@ -37,7 +37,7 @@ export function loadMaaser() {
        
         for(let i = 0; i < json.length; i++) {
           
-        if(JSON.parse(localStorage.getItem('ditnoua')) === json[i].acountId){
+        if(localStorage.getItem('ditnoua') === json[i].acountId){
            tryout = json[i];
            break
         }
@@ -99,7 +99,7 @@ export function saveToStorage(newMasserPost) {
 };
 
         for(let i = 0; i < allAcounts.length; i++) {
-      if(JSON.parse(localStorage.getItem('ditnoua')) === allAcounts[i].acountId){
+      if(localStorage.getItem('ditnoua') === allAcounts[i].acountId){
           allAcounts[i] = newMasserPost;
           }
         }
@@ -109,5 +109,26 @@ export function saveToStorage(newMasserPost) {
 MasserPost.open('POST', 'data.json'); // Replace with your server URL
 MasserPost.setRequestHeader('Content-Type', 'application/json');
 MasserPost.send(JSON.stringify(allAcounts)); // Send the updated passwords
+ 
+ }
+
+export function saveToAllStorage(allMasserPost) {
+  const MasserPost = new XMLHttpRequest();
+
+  MasserPost.onload = () => {
+   if (MasserPost.status === 200) {
+       console.log('Password successfully added and saved to the server.');
+   } else {
+       console.error('Failed to save the password:', MasserPost.statusText);
+   }
+};
+
+   
+       
+        
+
+MasserPost.open('POST', 'data.json'); // Replace with your server URL
+MasserPost.setRequestHeader('Content-Type', 'application/json');
+MasserPost.send(JSON.stringify(allMasserPost)); // Send the updated passwords
  
  }

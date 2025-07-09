@@ -1,6 +1,6 @@
 [
 {
-  "acountId": "Ma00ser",
+  "acountId": 4000,
   "autoPay": false,
   "isSwapped": false,
   "myCharity": "matbia",
@@ -327,7 +327,7 @@
     }
     ]
     },
-  "acountId": "Ma01ser",
+  "acountId": 5000,
   "currentBalance": 148,
   "donations": [
     {

@@ -363,6 +363,12 @@ svg.trash{
   cursor: pointer;
 }
 
+svg.sU{
+  fill: var(--mainWhite);
+  cursor: pointer;
+  
+}
+
 @media(max-width: 500px) {
 
   .settingsCon{

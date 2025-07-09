@@ -87,12 +87,11 @@ a:hover{
    grid-template-columns: 1fr 1fr;
 }
 
-.signIn form{
+.signIn > form:first-of-type {
     margin-right: 20px;
-   height: 300px;
+   height: 400px;
    display: grid;
    grid-template-columns: 1fr;
-   
 } 
 
 .signH{
@@ -100,13 +99,17 @@ a:hover{
     font-size: 40px;
 }
 
-.signIn input{
+.signIn form input{
   background: transparent;
   border: 1px solid var(--mainWhite);
 
   justify-self: center;
   height: 30px;
   width: 140px;
+}
+
+.signIn input[type=submit]{
+ border-radius: 10px;
 }
 
 .signIn input[type=submit]:hover{
@@ -119,6 +122,10 @@ a:hover{
     display: grid;
     grid-template-columns: 1fr 1fr;
     padding: 10px;
+}
+
+.textBoxes input{
+    align-self: center;
 }
 
  .textBoxes input::placeholder{
@@ -135,6 +142,63 @@ form span{
     margin-top: 50%;
     transform: translateY(-50%);
     width: 400px;
+}
+
+.signUpModal{
+    display: none;
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: var(--backroundBlue);
+    width: 400px;
+    height: 370px;
+}
+.suH{
+    font-size: 30px;
+    padding: 10px;
+}
+
+.suH span{
+    font-size: 13px;
+}
+
+.signUpModal form{
+    padding: 20px;
+  display: grid;
+  gap:20px;
+  grid-template-columns:1fr;
+  justify-items: center;
+  align-items: center;
+}
+
+
+.signUpModal form input{
+    background: transparent;
+    border: solid var(--mainWhite) 1px;
+
+}
+
+.signUpModal input[type=text]::placeholder{
+   font-size: 20px;
+   opacity: 0.5;
+   color: var(--mainWhite);
+}
+
+
+.signUpModal input[type=text]{
+    padding: 5px;
+    width: 170px;
+}
+
+.signUpModal input[type=submit]{
+    width: 130px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.signUpModal input[type=submit]:hover{
+    background: var(--mainWhite);
+    color: var(--backroundBlue);
 }
 
 .amount{
@@ -396,7 +460,7 @@ tr:nth-child(even){
         grid-template-columns: 1fr;
     }
      
-    .signIn form{
+    .signIn .form{
         margin-right: 0px;
         height: 200px;
         display: grid;
@@ -439,6 +503,28 @@ tr:nth-child(even){
         transform: translate(-50%);
         width: 150px;
      }
+
+     .signUpModal{
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        width: 100%;
+        height: 500px;
+     }
+
+     .signUpModal form{
+            padding: 20px;
+            display: grid;
+            gap:10px;
+            grid-template-columns:1fr;
+            justify-items: center;
+            align-items: center;
+        }
+
+        .signUpModal form input{
+           height: 20px;
+
+        }
 
     .settings{
     top:4px !important;
