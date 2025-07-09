@@ -88,7 +88,7 @@ export function saveToStorage(newMasserPost) {
 };
 
         for(let i = 0; i < allAcounts.length; i++) {
-      if(JSON.parse(localStorage.getItem('currentMan')) === allAcounts[i].acountId){
+      if(JSON.parse(localStorage.getItem('ditnoua')) === allAcounts[i].acountId){
           allAcounts[i] = newMasserPost;
           }
         }

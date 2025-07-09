@@ -3,13 +3,7 @@ import { loadAcounts, acounts, saveToAcountsStorage } from "./acount.js";
 loadAcounts().then(() => {
   
 
-for (let i = 0; i < acounts.length; i++) {
-  console.log(acounts[i].name);
- 
-  
-}
 
- console.log('hi');
 if(!localStorage.getItem('login')){
   localStorage.setItem('login', false);
 }
