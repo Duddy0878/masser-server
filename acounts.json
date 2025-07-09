@@ -1,0 +1,16 @@
+[
+    {
+        "name": "mimi",
+        "password": "123456",
+        "email": "mimiw@163.com",
+        "acountId": 4000
+
+    },
+    {
+        "name": "duddy",
+        "password": "654321",
+        "email": "mimiw@163.com",
+        "acountId": 5000
+
+    }
+]

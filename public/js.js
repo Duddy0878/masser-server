@@ -455,8 +455,8 @@ loadMaaser()
                     
                      var actuleDay = dayjs();
 
-                    if(localStorage.getItem('autoPay') === 'true' &&  todayInLoop.isBefore(actuleDay)){
-                    var incomes = JSON.parse(localStorage.getItem('incomes'));
+                    if(maaser.autoPay &&  todayInLoop.isBefore(actuleDay)){
+                    var incomes = maaser.incomes;
                     var myPay = incomes.myPay;
                     var myPayPrecent = Math.ceil(Number(myPay) * 0.10);
                     console.log(myPayPrecent);
@@ -527,7 +527,7 @@ loadMaaser()
     var autoBtn = document.querySelector('.auto');
     autoBtn.addEventListener('click', () => {
     
-     if(localStorage.getItem('autoPay') === 'true'){
+     if(maaser.autoPay){
        alert('Auto pay is already Enabled');
      }
      else{

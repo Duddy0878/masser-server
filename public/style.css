@@ -68,11 +68,67 @@ a:hover{
 }
 
 .box{
+    display: none;
    border: solid 4px var(--mainWhite);
    width: 53%;
    margin-left: 50%;
    transform: translate(-50%);
    margin-top: 10%;
+}
+
+.signIn{
+   border: solid 4px var(--mainWhite);
+   width: 57%;
+   margin-left: 50%;
+   transform: translate(-50%);
+   margin-top: 10%;
+   height: 400px;
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+}
+
+.signIn form{
+    margin-right: 20px;
+   height: 300px;
+   display: grid;
+   grid-template-columns: 1fr;
+   
+} 
+
+.signH{
+    margin-top: 90px;
+    font-size: 40px;
+}
+
+.signIn input{
+  background: transparent;
+  border: 1px solid var(--mainWhite);
+
+  justify-self: center;
+  height: 30px;
+  width: 140px;
+}
+
+.signIn input[type=submit]:hover{
+   cursor: pointer;
+   background: var(--mainWhite);
+   color: var(--backroundBlue);
+}
+
+.textBoxes{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 10px;
+}
+
+form span{
+    font-size: 35px;
+}
+
+.signIn img{
+    margin-top: 50%;
+    transform: translateY(-50%);
+    width: 400px;
 }
 
 .amount{

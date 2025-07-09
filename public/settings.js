@@ -1,10 +1,11 @@
 import dayjs from 'https://unpkg.com/dayjs@1.11.10/esm/index.js';
 import { loadMaaser, maaser, saveToStorage } from './maaser.js';
 
-if (localStorage.getItem('isSwapped') === null) {
-  localStorage.setItem('isSwapped', false);
-}
 
+loadMaaser().then(()=>{
+ 
+  console.log(maaser);
+  
 
     var settingsBtn = document.querySelector('.settings');
     var settingsModal = document.querySelector('.settingsCon');
@@ -36,7 +37,7 @@ if (localStorage.getItem('isSwapped') === null) {
     `
   
     function displaySwitch(){
-     isSwapped = JSON.parse(localStorage.getItem('isSwapped'));
+     isSwapped = maaser.isSwapped;
 
     if (!isSwapped) {
         colorChange.innerHTML = offHTML;
@@ -61,7 +62,8 @@ if (localStorage.getItem('isSwapped') === null) {
     }
 
     function displayTheme(){
-      isSwapped = JSON.parse(localStorage.getItem('isSwapped'));
+      isSwapped = maaser.isSwapped;
+      
 
       if (!isSwapped) {
        lightTheme();
@@ -76,20 +78,20 @@ if (localStorage.getItem('isSwapped') === null) {
 
 
 colorChange.addEventListener('click', () => {
-   isSwapped = JSON.parse(localStorage.getItem('isSwapped'));
-  
-  console.log('hi');
+   isSwapped = maaser.isSwapped;
   
   if (!isSwapped) {
-    
-   darkTheme();
-    localStorage.setItem('isSwapped', true);
+    darkTheme();
+    maaser.isSwapped = true;
+    saveToStorage(maaser);
   } else {
     lightTheme();
-    localStorage.setItem('isSwapped', false);
+    maaser.isSwapped = false;
+    saveToStorage(maaser);
   }
 
-  isSwapped = localStorage.getItem('isSwapped');
+  isSwapped = maaser.isSwapped;
+  
   displaySwitch();
   
 });
@@ -98,12 +100,9 @@ colorChange.addEventListener('click', () => {
 // ====== charedy options ======
 
 
-if (localStorage.getItem('myCharity') === null) {
-  localStorage.setItem('myCharity', "matbia");
-}
-
 function displayCharidy(){
-var myCharity = localStorage.getItem('myCharity');
+var myCharity = maaser.myCharity;
+
 
 var goTo = document.querySelector('.goTo');
 
@@ -124,7 +123,7 @@ else if (myCharity === 'ojc') {
   goTo.textContent = 'Go To OJC';
 }
 else{
-  var getCustomCharity = JSON.parse(localStorage.getItem('customCharity'));
+  var getCustomCharity = maaser.customCharity;
   goTo.href = getCustomCharity.url;
   goTo.textContent = `Go To ${getCustomCharity.name}`
   
@@ -139,7 +138,8 @@ function changeCharity() {
 
   charitySelect.addEventListener('change', function() {
     if (charitySelect.value !== 'add') {
-    localStorage.setItem('myCharity', charitySelect.value);
+    maaser.myCharity = charitySelect.value;
+    saveToStorage(maaser);
     displayCharidy();}
     else {
       var customMoadal = document.querySelector('.addCharityModal');
@@ -154,9 +154,9 @@ function changeCharity() {
       addCustom.addEventListener('click', () => {
         var customCharity = {name: customName.value, url: customUrl.value};
          
-         localStorage.setItem('customCharity', JSON.stringify(customCharity));
-
-         localStorage.setItem('myCharity', customName.value);
+         maaser.customCharity = customCharity;
+         maaser.myCharity = customCharity.name;
+         saveToStorage(maaser);
          displayCharidy();
 
          customName.value = '';
@@ -182,26 +182,18 @@ changeCharity();
 // ========= auto pay chek =============
 var incomes
 function getIncomes() {
- incomes = JSON.parse(localStorage.getItem('incomes'));
+ incomes = maaser.incomes;
+ console.log(incomes);
+ 
 }
 getIncomes();
 
-if (!localStorage.getItem('autoPay')) {
-  localStorage.setItem('autoPay', false);
-}
-if (!localStorage.getItem('incomes')) {
-  var incomes = {
-    myPay: 0,
-    typesOfPay: [
-    ]}
-localStorage.setItem('incomes', JSON.stringify(incomes));
-}
 
 function paySwitches() {
- var onOff = localStorage.getItem('autoPay');
+ var onOff = maaser.autoPay;
  var switchHtml = document.querySelector('.paySwitchs');
 
- if(onOff === 'true') {
+ if(onOff) {
     switchHtml.innerHTML = `<svg class="paySwitch" xmlns="http://www.w3.org/2000/svg" height="29px" viewBox="0 -960 960 960" width="29px" ><path d="M280-240q-100 0-170-70T40-480q0-100 70-170t170-70h400q100 0 170 70t70 170q0 100-70 170t-170 70H280Zm0-80h400q66 0 113-47t47-113q0-66-47-113t-113-47H280q-66 0-113 47t-47 113q0 66 47 113t113 47Zm400-40q50 0 85-35t35-85q0-50-35-85t-85-35q-50 0-85 35t-35 85q0 50 35 85t85 35ZM480-480Z"/></svg>`;
 }
 else {
@@ -217,7 +209,7 @@ function autoPayCheck(){
 
   switchAutoPayOn.addEventListener('click', () => {
     
-   if(localStorage.getItem('autoPay') === 'false'){
+   if(!maaser.autoPay){
     if(incomes.myPay === 0) {
      swal.fire({
       title: 'Error',
@@ -232,12 +224,13 @@ function autoPayCheck(){
      })     
     }
     else {
-      localStorage.setItem('autoPay', true);
+      maaser.autoPay = true;
     }
    }
    else {
-    localStorage.setItem('autoPay', false);
+    maaser.autoPay = false;
   }
+    saveToStorage(maaser);
     paySwitches();
   })
 }
@@ -321,7 +314,8 @@ function addNewIncomeChoice() {
       var newIncomeAmount = prompt('Enter The Amount Of The Income:');
       if (newIncomeAmount) {
         incomes.typesOfPay.push({name: newIncomeName, amount: Number(newIncomeAmount)});
-        localStorage.setItem('incomes', JSON.stringify(incomes));
+        maaser.incomes = incomes;
+        saveToStorage(maaser);
         countPay();
         displayTypesOfPay();
         incomeDisplay();
@@ -345,7 +339,9 @@ for (let i = 0; i < incomes.typesOfPay.length; i++) {
   
 }
 incomes.myPay = countPay;
-localStorage.setItem('incomes', JSON.stringify(incomes));
+maaser.incomes = incomes;
+saveToStorage(maaser);
+
 }
 
 countPay();
@@ -360,7 +356,8 @@ updatePay.addEventListener('click', () => {
         type.amount = Number(newPay.value);
       }
     })
-    localStorage.setItem('incomes', JSON.stringify(incomes));
+    maaser.incomes = incomes;
+    saveToStorage(maaser);
     updateModal.style.display = 'none';
     countPay();
     incomeDisplay();
@@ -401,5 +398,5 @@ refreshNow.addEventListener('click', () => {
   window.location.reload();
 })
 
-
+});
 

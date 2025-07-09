@@ -3,6 +3,8 @@ export let maaser = {
   donations: []
 };
 
+let allAcounts = [];
+
 export function loadMaaser() {
   return new Promise((resolve, reject) => {
     const masserRequest = new XMLHttpRequest();
@@ -18,11 +20,43 @@ export function loadMaaser() {
         } else {
           json = JSON.parse(masserRequest.response);
         }
+        var tryout;
 
+        if (localStorage.getItem('ditnoua') !== null){
+       
+        for(let i = 0; i < json.length; i++) {
+          
+        if(JSON.parse(localStorage.getItem('ditnoua')) === json[i].acountId){
+           tryout = json[i];
+           break
+        }
+        }
+       }
+       else{
+                tryout = {
+                "acountId": 1000,
+                "autoPay": false,
+                "isSwapped": false,
+                "myCharity": "matbia",
+                "customCharity": {},
+                "incomes":{
+                "myPay": 0,
+                "typesOfPay": [
+                  
+                  ]
+                  },
+                "currentBalance": 1,
+                "donations": []
+              }
+       }
         // Update the `maaser` object
-        Object.assign(maaser, json);
+        Object.assign(allAcounts, json);
+        Object.assign(maaser, tryout);
 
         console.log('Maaser:', maaser);
+        console.log('allAcounts:', allAcounts);
+        
+        
         resolve(maaser); // Resolve the Promise with the loaded data
       } else {
         console.error('Error loading request:', masserRequest.statusText);
@@ -53,8 +87,16 @@ export function saveToStorage(newMasserPost) {
    }
 };
 
+        for(let i = 0; i < allAcounts.length; i++) {
+      if(JSON.parse(localStorage.getItem('currentMan')) === allAcounts[i].acountId){
+          allAcounts[i] = newMasserPost;
+          }
+        }
+       
+        
+
 MasserPost.open('POST', 'data.json'); // Replace with your server URL
 MasserPost.setRequestHeader('Content-Type', 'application/json');
-MasserPost.send(JSON.stringify(newMasserPost)); // Send the updated passwords
+MasserPost.send(JSON.stringify(allAcounts)); // Send the updated passwords
  
  }
