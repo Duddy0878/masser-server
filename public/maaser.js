@@ -1,6 +1,17 @@
 export let maaser = {
-  currentBalance: 1,
-  donations: []
+     "acountId": 1000,
+      "autoPay": false,
+      "isSwapped": false,
+      "myCharity": "matbia",
+      "customCharity": {name: '', url: ''},
+      "incomes":{
+      "myPay": 0,
+      "typesOfPay": [
+        
+        ]
+        },
+      "currentBalance": 1,
+      "donations": []
 };
 
 let allAcounts = [];
@@ -38,7 +49,7 @@ export function loadMaaser() {
                 "autoPay": false,
                 "isSwapped": false,
                 "myCharity": "matbia",
-                "customCharity": {},
+                "customCharity": {name: '', url: ''},
                 "incomes":{
                 "myPay": 0,
                 "typesOfPay": [

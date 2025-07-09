@@ -25,6 +25,16 @@ if(localStorage.getItem('login') == 'true'){
 else{
     boxModal.style.display = 'none';
     loginModal.style.display = 'grid';
+    loginModal.innerHTML = ` <img src="./logos/logo.png" alt="">
+        <form action="">
+            
+            <div class="signH"> Welcome Sign In</div>
+            <div class="textBoxes">
+                <input type="text" placeholder=" Name" class="name" autofocus>
+                <input type="text" placeholder=" Password" class="password">
+            </div>
+            <input type="submit" name="" id="" class="signInNow">
+        </form>`
 }
 }
 displayapp();

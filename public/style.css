@@ -121,6 +121,12 @@ a:hover{
     padding: 10px;
 }
 
+ .textBoxes input::placeholder{
+        font-size: 20px;
+        color: var(--mainWhite);
+        opacity: 0.5;
+    }
+
 form span{
     font-size: 35px;
 }
@@ -378,6 +384,61 @@ tr:nth-child(even){
         border: none;
         margin-top: 0px;
     }
+
+    .signIn{
+        border: none;
+        width:100%;
+        margin-left: 50%;
+        transform: translate(-50%);
+        margin-top: 10%;
+        height: 300px;
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+     
+    .signIn form{
+        margin-right: 0px;
+        height: 200px;
+        display: grid;
+        grid-template-columns: 1fr;
+    
+    } 
+
+    .textBoxes{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 10px;
+    height: 40px;
+    align-self: center;
+    }
+
+    .textBoxes input{
+       height: 30px !important;
+    }
+
+    .textBoxes input::placeholder{
+        font-size: 20px;
+        color: var(--mainWhite);
+    }
+
+
+    .signH{
+        margin-top: 20px;
+        font-size: 30px;
+        height: 10px;
+     }
+
+     .signIn input{
+        height: 20px;
+        width: 120px;
+      }
+
+    .signIn img{
+        margin-top: 0%;
+        margin-left: 50%;
+        transform: translate(-50%);
+        width: 150px;
+     }
 
     .settings{
     top:4px !important;
